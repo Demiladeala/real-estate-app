@@ -2,11 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 body{
-  background: #fefefe;
+  background: #fcfcfc;
 }
-body::-webkit-scrollbar{
-  width: 4px;
+/* body::-webkit-scrollbar{
+  width: 10px;
+} */
+body::-webkit-scrollbar-thumb{
+  width: 8px;
+  color: #222;
 }
 :root {
   --swiper-theme-color: #fff !important;
+}
+.box-shadow{
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }

@@ -1,6 +1,8 @@
+import Banner from './components/Banner'
 import Hero from './components/Hero'
-import Houses from './components/Houses'
 import Navbar from './components/Navbar'
+import Properties from './components/Properties'
+import Services from './components/Services'
 
 export default function Home() {
   return (
@@ -13,8 +15,16 @@ export default function Home() {
         <Hero />
       </section>
 
-      <section id=''>
-        <Houses />
+      <section id='services'>
+        <Services />
+      </section>
+
+      <section id='listings'>
+        <Properties />
+      </section>
+
+      <section id='banner'>
+        <Banner />
       </section>
     </div>
   )

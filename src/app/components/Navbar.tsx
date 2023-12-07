@@ -26,11 +26,12 @@ const Navbar = (props: Props) => {
             <h4 className="cursor-pointer">BUY</h4>
             <h4 className="cursor-pointer">RENT</h4>
             <h4 className="cursor-pointer">SELL</h4>
+            <h4 className="cursor-pointer">LAND</h4>
         </div>
 
         <div className="hidden md:flex items-center gap-4">
-            <button className="bg-[#222] text-white py-2 px-4 rounded-lg border hover:border-[#222] hover:bg-transparent hover:text-[#222]">LOGIN</button>
-            <button className="py-2 px-4 rounded-lg shadow-xl border hover:bg-[#fbfbfb]">SIGNUP</button>
+            <button className="bg-[#222] text-white py-[6px] px-4 rounded-lg border hover:border-[#222] hover:bg-transparent hover:text-[#222]">LOGIN</button>
+            <button className="py-[6px] px-4 rounded-lg shadow-xl border hover:bg-[#fbfbfb]">SIGNUP</button>
         </div>
 
         <div className="md:hidden pr-3">
@@ -45,6 +46,8 @@ const Navbar = (props: Props) => {
             <li>RENT</li>
             <div className="w-full h-px bg-[#eee]"></div>
             <li>SELL</li>
+            <div className="w-full h-px bg-[#eee]"></div>
+            <li>LAND</li>
             <div className="w-full h-px bg-[#eee]"></div>
             <li>LOGIN</li>
             <div className="w-full h-px bg-[#eee]"></div>
