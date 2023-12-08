@@ -26,7 +26,7 @@ const Properties = (props: Props) => {
 
           <div className='p-3'>
             <h3 className='text-xl font-semibold'>Glass Residence</h3>
-            <p className="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, voluptatum.</p>
+            <p className="max-md:hidden text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, voluptatum.</p>
             <div className="w-full h-px bg-[#eee] my-2"></div>
             <h3 className='font-semibold'>₦2,000,000</h3>
             <div className='mt-1 flex items-center gap-2'>
@@ -60,7 +60,7 @@ const Properties = (props: Props) => {
 
           <div className='p-3'>
             <h3 className='text-xl font-semibold'>Glass Residence</h3>
-            <p className="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, voluptatum.</p>
+            <p className="max-md:hidden text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, voluptatum.</p>
             <div className="w-full h-px bg-[#eee] my-2"></div>
             <h3 className='font-semibold'>₦2,000,000</h3>
             <div className='mt-1 flex items-center gap-2'>
@@ -94,7 +94,7 @@ const Properties = (props: Props) => {
 
           <div className='p-3'>
             <h3 className='text-xl font-semibold'>Glass Residence</h3>
-            <p className="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, voluptatum.</p>
+            <p className="max-md:hidden text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, voluptatum.</p>
             <div className="w-full h-px bg-[#eee] my-2"></div>
             <h3 className='font-semibold'>₦2,000,000</h3>
             <div className='mt-1 flex items-center gap-2'>
@@ -128,7 +128,7 @@ const Properties = (props: Props) => {
 
           <div className='p-3'>
             <h3 className='text-xl font-semibold'>Glass Residence</h3>
-            <p className="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, voluptatum.</p>
+            <p className="max-md:hidden text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, voluptatum.</p>
             <div className="w-full h-px bg-[#eee] my-2"></div>
             <h3 className='font-semibold'>₦2,000,000</h3>
             <div className='mt-1 flex items-center gap-2'>
@@ -162,7 +162,7 @@ const Properties = (props: Props) => {
 
           <div className='p-3'>
             <h3 className='text-xl font-semibold'>Glass Residence</h3>
-            <p className="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, voluptatum.</p>
+            <p className="max-md:hidden text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, voluptatum.</p>
             <div className="w-full h-px bg-[#eee] my-2"></div>
             <h3 className='font-semibold'>₦2,000,000</h3>
             <div className='mt-1 flex items-center gap-2'>
@@ -196,7 +196,7 @@ const Properties = (props: Props) => {
 
           <div className='p-3'>
             <h3 className='text-xl font-semibold'>Glass Residence</h3>
-            <p className="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, voluptatum.</p>
+            <p className="max-md:hidden text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, voluptatum.</p>
             <div className="w-full h-px bg-[#eee] my-2"></div>
             <h3 className='font-semibold'>₦2,000,000</h3>
             <div className='mt-1 flex items-center gap-2'>

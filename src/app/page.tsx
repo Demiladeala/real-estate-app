@@ -1,4 +1,5 @@
 import Banner from './components/Banner'
+import Experts from './components/Experts'
 import Hero from './components/Hero'
 import Navbar from './components/Navbar'
 import Properties from './components/Properties'
@@ -25,6 +26,10 @@ export default function Home() {
 
       <section id='banner'>
         <Banner />
+      </section>
+
+      <section id='expert'>
+        <Experts />
       </section>
     </div>
   )

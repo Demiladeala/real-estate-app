@@ -24,14 +24,14 @@ const Hero = (props: Props) => {
     pagination={{ clickable: true }}
     >
       <SwiperSlide>
-        <div className='relative mt-20 w-[95%] h-[20rem] md:h-[34rem] md:w-[96%] lg:w-[98%] mx-auto'>
+        <div className='relative mt-24 w-[95%] h-[20rem] md:h-[34rem] md:w-[96%] lg:w-[98%] mx-auto'>
         <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30 rounded-xl"></div>
             <Image 
             alt="hero"
             src={hero}
             className="rounded-xl w-full h-full bg-cover object-cover bg-center"
             />
-            <div className="z-40 w-full absolute top-[4rem] left-0 px-4 md:ml-16">
+            <div className="z-40 w-full absolute top-[2rem] md:top-[4rem] left-0 px-4 md:ml-16">
               <h2 className="text-white text-2xl md:text-3xl lg:text-5xl font-semibold md:mt-28 ">
                 Buy or Rent Properties <br /> with no commission
               </h2>
@@ -44,7 +44,7 @@ const Hero = (props: Props) => {
                   type="search" 
                   placeholder="Address, School, City or Neighborhood" />
                   <div className="w-[10%] bg-white py-2 rounded-tr rounded-br">
-                    <button className="absolute right-2 top-[5px] bg-[#222] text-white w-7 h-7 flex items-center justify-center rounded-full">
+                    <button className="absolute right-[2px] top-[5px] bg-[#222] text-white w-7 h-7 flex items-center justify-center rounded-full">
                       <FiSearch />
                     </button>
                   </div>
@@ -53,14 +53,14 @@ const Hero = (props: Props) => {
                 
                 <div className="w-full basis-[100%] md:basis-[50%] flex items-center gap-5">
                   <div className="basis-[50%]">
-                    <select className="w-full bg-white py-2 outline-none rounded" name="" id="">
+                    <select className="w-full bg-white py-2 outline-none rounded placeholder:text-xs" name="" id="">
                       <option value="">Category</option>
                       <option value="">Apartment</option>
                     </select>
                   </div>
 
                   <div className="basis-[50%]">
-                    <select className="w-full bg-white py-2 outline-none rounded" name="" id="">
+                    <select className="w-full bg-white py-2 outline-none rounded placeholder:text-xs" name="" id="">
                       <option value="">Location</option>
                       <option value="">Akure</option>
                     </select>
@@ -73,14 +73,14 @@ const Hero = (props: Props) => {
     </SwiperSlide>
 
     <SwiperSlide>
-        <div className='relative mt-20 w-[95%] h-[20rem] md:h-[34rem] md:w-[96%] lg:w-[98%] mx-auto'>
+        <div className='relative mt-24 w-[95%] h-[20rem] md:h-[34rem] md:w-[96%] lg:w-[98%] mx-auto'>
           <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30 rounded-xl"></div>
             <Image 
             alt="hero"
             src={hero2}
             className="rounded-xl w-full h-full object-cover bg-center"
             />
-            <div className="z-40 w-full absolute top-[4rem] left-0 px-4 md:ml-16">
+            <div className="z-40 w-full absolute top-[2rem] md:top-[4rem] left-0 px-4 md:ml-16">
               
               <h2 className="text-white text-2xl md:text-3xl lg:text-5xl font-semibold md:mt-28 ">
                 Unlock Your Dream Home
@@ -94,7 +94,7 @@ const Hero = (props: Props) => {
                   type="search" 
                   placeholder="Address, School, City or Neighborhood" />
                   <div className="w-[10%] bg-white py-2 rounded-tr rounded-br">
-                    <button className="absolute right-2 top-[5px] bg-[#222] text-white w-7 h-7 flex items-center justify-center rounded-full">
+                    <button className="absolute right-[2px] top-[5px] bg-[#222] text-white w-7 h-7 flex items-center justify-center rounded-full">
                       <FiSearch />
                     </button>
                   </div>
@@ -103,14 +103,14 @@ const Hero = (props: Props) => {
                 
                 <div className="w-full basis-[100%] md:basis-[50%] flex items-center gap-5">
                   <div className="basis-[50%]">
-                    <select className="w-full bg-white py-2 outline-none rounded" name="" id="">
+                    <select className="w-full bg-white py-2 outline-none rounded placeholder:text-xs" name="" id="">
                       <option value="">Category</option>
                       <option value="">Apartment</option>
                     </select>
                   </div>
 
                   <div className="basis-[50%]">
-                    <select className="w-full bg-white py-2 outline-none rounded" name="" id="">
+                    <select className="w-full bg-white py-2 outline-none rounded placeholder:text-xs" name="" id="">
                       <option value="">Location</option>
                       <option value="">Akure</option>
                     </select>
@@ -123,14 +123,14 @@ const Hero = (props: Props) => {
     </SwiperSlide>
 
     <SwiperSlide>
-        <div className='relative mt-20 w-[95%] h-[20rem] md:h-[34rem] md:w-[96%] lg:w-[98%] mx-auto'>
+        <div className='relative mt-24 w-[95%] h-[20rem] md:h-[34rem] md:w-[96%] lg:w-[98%] mx-auto'>
           <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30 rounded-xl"></div>
             <Image 
             alt="hero"
             src={hero3}
             className="rounded-xl w-full h-full object-cover bg-center"
             />
-            <div className="z-40 w-full absolute top-[4rem] left-0 px-4 md:ml-16">
+            <div className="z-40 w-full absolute top-[2rem] md:top-[4rem] left-0 px-4 md:ml-16">
               
               <h2 className="text-white text-2xl md:text-3xl lg:text-5xl font-semibold md:mt-28 ">
                 Discover Your Ideal <br />Living Space
@@ -144,7 +144,7 @@ const Hero = (props: Props) => {
                   type="search" 
                   placeholder="Address, School, City or Neighborhood" />
                   <div className="w-[10%] bg-white py-2 rounded-tr rounded-br">
-                    <button className="absolute right-2 top-[5px] bg-[#222] text-white w-7 h-7 flex items-center justify-center rounded-full">
+                    <button className="absolute right-[2px] top-[5px] bg-[#222] text-white w-7 h-7 flex items-center justify-center rounded-full">
                       <FiSearch />
                     </button>
                   </div>
@@ -153,16 +153,16 @@ const Hero = (props: Props) => {
                 
                 <div className="w-full basis-[100%] md:basis-[50%] flex items-center gap-5">
                   <div className="basis-[50%]">
-                    <select className="w-full bg-white py-2 outline-none rounded" name="" id="">
-                      <option value="">Category</option>
-                      <option value="">Apartment</option>
+                    <select className="w-full bg-white py-2 text-sm outline-none rounded" name="" id="">
+                      <option value="" className="text-sm">Category</option>
+                      <option value="" className="text-sm">Apartment</option>
                     </select>
                   </div>
 
                   <div className="basis-[50%]">
-                    <select className="w-full bg-white py-2 outline-none rounded" name="" id="">
-                      <option value="">Location</option>
-                      <option value="">Akure</option>
+                    <select className="w-full bg-white py-2 text-sm outline-none rounded" name="" id="">
+                      <option value="" className="text-sm">Location</option>
+                      <option value="" className="text-sm">Akure</option>
                     </select>
                   </div>
                 </div>
@@ -173,14 +173,14 @@ const Hero = (props: Props) => {
     </SwiperSlide>
 
     <SwiperSlide>
-        <div className='relative mt-20 w-[95%] h-[20rem] md:h-[34rem] md:w-[96%] lg:w-[98%] mx-auto'>
+        <div className='relative mt-24 w-[95%] h-[20rem] md:h-[34rem] md:w-[96%] lg:w-[98%] mx-auto'>
           <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30 rounded-xl"></div>
             <Image 
             alt="hero"
             src={hero4}
             className="rounded-xl w-full h-full object-cover bg-center"
             />
-            <div className="z-40 w-full absolute top-[4rem] left-0 px-4 md:ml-16">
+            <div className="z-40 w-full absolute top-[2rem] md:top-[4rem] left-0 px-4 md:ml-16">
               
               <h2 className="text-white text-2xl md:text-3xl lg:text-5xl font-semibold md:mt-28 ">
                 Desirable Features: A Home <br />Beyond the Basics
@@ -194,7 +194,7 @@ const Hero = (props: Props) => {
                   type="search" 
                   placeholder="Address, School, City or Neighborhood" />
                   <div className="w-[10%] bg-white py-2 rounded-tr rounded-br">
-                    <button className="absolute right-2 top-[5px] bg-[#222] text-white w-7 h-7 flex items-center justify-center rounded-full">
+                    <button className="absolute right-[2px] top-[5px] bg-[#222] text-white w-7 h-7 flex items-center justify-center rounded-full">
                       <FiSearch />
                     </button>
                   </div>
@@ -203,14 +203,14 @@ const Hero = (props: Props) => {
                 
                 <div className="w-full basis-[100%] md:basis-[50%] flex items-center gap-5">
                   <div className="basis-[50%]">
-                    <select className="w-full bg-white py-2 outline-none rounded" name="" id="">
+                    <select className="w-full bg-white py-2 outline-none rounded placeholder:text-xs" name="" id="">
                       <option value="">Category</option>
                       <option value="">Apartment</option>
                     </select>
                   </div>
 
                   <div className="basis-[50%]">
-                    <select className="w-full bg-white py-2 outline-none rounded" name="" id="">
+                    <select className="w-full bg-white py-2 outline-none rounded placeholder:text-xs" name="" id="">
                       <option value="">Location</option>
                       <option value="">Akure</option>
                     </select>
