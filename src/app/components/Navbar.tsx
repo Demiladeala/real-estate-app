@@ -40,7 +40,7 @@ const Navbar = (props: Props) => {
     </div>
 
     { nav && 
-    (   <div className="w-full absolute bg-white shadow-xl px-5 py-3 pt-20 space-y-2 top-0 left-0 md:hidden z-10 list-none">
+    (   <div className="w-full fixed bg-white shadow-xl px-5 py-3 pt-20 space-y-2 top-0 left-0 md:hidden z-10 list-none">
             <li>BUY</li>
             <div className="w-full h-px bg-[#eee]"></div>
             <li>RENT</li>
