@@ -42,8 +42,8 @@ const Experts = (props: Props) => {
                 </div>
             </div>
 
-            <div className='md:basis-[50%] flex gap-3 items-center'>
-                <div className=''>
+            <div className='w-full h-[30rem] first-letter:md:basis-[50%] flex gap-3 items-center'>
+                <div className='basis-[50%] h-[80%] m-auto rounded-xl'>
 
                 </div>
             </div>
