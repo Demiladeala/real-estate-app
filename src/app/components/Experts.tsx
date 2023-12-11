@@ -47,7 +47,7 @@ const Experts = (props: Props) => {
                 </div>
             </div>
 
-            <div className='w-full relative flex gap-3 items-center lg:items-start h-[25rem] md:h-[30rem] lg:basis-[50%] lg:top-[-4rem]'>
+            <div className='w-full relative flex gap-3 items-center lg:items-start h-[20rem] md:h-[30rem] lg:basis-[50%] lg:top-[-4rem]'>
                 <div className='basis-[50%] w-full h-[80%] m-auto rounded-xl border'>
                     <Image
                     src={expert1}

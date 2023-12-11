@@ -3,6 +3,7 @@ import Image from "next/image"
 import logo from '../../../public/logo.png'
 import { RiMenu4Fill } from "react-icons/ri";
 import { useState } from "react";
+import Link from "next/link";
 
 type Props = {}
 
@@ -17,9 +18,11 @@ const Navbar = (props: Props) => {
     <>
     <div className='z-50 fixed top-0 left-0 p-4 bg-white  w-full flex justify-between items-center'>
         <div>
-            <Image
-            alt="logo" 
-            src={logo}/>
+            <Link href='/'>
+                <Image
+                alt="logo" 
+                src={logo}/>
+            </Link>
         </div>
 
         <div className="hidden md:flex items-center gap-6 font-medium">
