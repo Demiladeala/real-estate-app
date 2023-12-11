@@ -1,18 +1,18 @@
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import listingImage1 from "../../../public/property-image-1.jpg"
-import listingImage2 from "../../../public/listing-image1.jpg"
 
-type Props = {}
+type Props = {
+    src: StaticImageData;
+}
 
-const ListingDetailsImage = (props: Props) => {
+const ListingDetailsImage = ({ src }: Props) => {
   return (
     <>
         <SwiperSlide>
             <div className='w-full h-full'>
             <Image
             alt='listing'
-            src={listingImage1} 
+            src={src} 
             className='w-full h-full bg-center bg-cover bg-no-repeat'
             />
             </div>
