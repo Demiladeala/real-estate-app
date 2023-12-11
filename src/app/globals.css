@@ -17,3 +17,10 @@ body::-webkit-scrollbar-thumb{
 .box-shadow{
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
+.footer-bg{
+  width: 100%;
+  background-image: linear-gradient(#ffffffde, #ffffffd5), url("../../public/footer-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
