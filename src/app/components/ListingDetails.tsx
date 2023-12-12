@@ -15,6 +15,7 @@ import ListingDetailsImage from '../utils/ListingDetailsImage';
 import PropertyDetails from './PropertyDetails';
 import SimilarProperties from './SimilarProperties';
 import InsetBg from '../utils/InsetBg';
+import SimilarHomes from './SimilarHomes';
 
 type Props = {}
 
@@ -37,7 +38,7 @@ const ListingDetails = (props: Props) => {
           slidesPerView={1}
           pagination={{ clickable: true }}
           navigation
-          autoplay={{ delay:6000 }}
+          autoplay={{ delay:4000 }}
           className='w-full h-[15rem] md:h-[25rem] lg:basis-[70%]'>
             <SwiperSlide>
               <InsetBg opacity='opacity-20' />
@@ -81,6 +82,12 @@ const ListingDetails = (props: Props) => {
         <div className='lg:basis-[30%]'>
           <SimilarProperties />
         </div>
+      </div>
+
+      <div className='w-[90%] mx-auto lg:w-full mt-10'>
+      <h2 className='font-semibold text-lg'>Similar homes</h2>
+
+        <SimilarHomes />
       </div>
 
     </div>

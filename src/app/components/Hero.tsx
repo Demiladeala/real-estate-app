@@ -56,14 +56,24 @@ const Hero = (props: Props) => {
                   <div className="basis-[50%]">
                     <select className="w-full bg-white py-2 outline-none rounded placeholder:text-xs" name="" id="">
                       <option value="">Category</option>
-                      <option value="">Apartment</option>
+                      <option value="">Flat/Apartment</option>
+                      <option value="">Condominium</option>
+                      <option value="">Detached Bungalow</option>
+                      <option value="">Detached Duplex</option>
+                      <option value="">Land</option>
+                      <option value="">Commercial Properties</option>
                     </select>
                   </div>
 
                   <div className="basis-[50%]">
                     <select className="w-full bg-white py-2 outline-none rounded placeholder:text-xs" name="" id="">
-                      <option value="">Location</option>
-                      <option value="">Akure</option>
+                      <option value="">Bedroom</option>
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                      <option value="">4</option>
+                      <option value="">5</option>
+                      <option value="">6+</option>
                     </select>
                   </div>
                 </div>
@@ -106,14 +116,24 @@ const Hero = (props: Props) => {
                   <div className="basis-[50%]">
                     <select className="w-full bg-white py-2 outline-none rounded placeholder:text-xs" name="" id="">
                       <option value="">Category</option>
-                      <option value="">Apartment</option>
+                      <option value="">Flat/Apartment</option>
+                      <option value="">Condominium</option>
+                      <option value="">Detached Bungalow</option>
+                      <option value="">Detached Duplex</option>
+                      <option value="">Land</option>
+                      <option value="">Commercial Properties</option>
                     </select>
                   </div>
 
                   <div className="basis-[50%]">
                     <select className="w-full bg-white py-2 outline-none rounded placeholder:text-xs" name="" id="">
-                      <option value="">Location</option>
-                      <option value="">Akure</option>
+                      <option value="">Bedroom</option>
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                      <option value="">4</option>
+                      <option value="">5</option>
+                      <option value="">6+</option>
                     </select>
                   </div>
                 </div>
@@ -162,7 +182,7 @@ const Hero = (props: Props) => {
 
                   <div className="basis-[50%]">
                     <select className="w-full bg-white py-2 text-sm outline-none rounded" name="" id="">
-                      <option value="" className="text-sm">Location</option>
+                      <option value="" className="text-sm">Type</option>
                       <option value="" className="text-sm">Akure</option>
                     </select>
                   </div>
@@ -206,14 +226,24 @@ const Hero = (props: Props) => {
                   <div className="basis-[50%]">
                     <select className="w-full bg-white py-2 outline-none rounded placeholder:text-xs" name="" id="">
                       <option value="">Category</option>
-                      <option value="">Apartment</option>
+                      <option value="">Flat/Apartment</option>
+                      <option value="">Condominium</option>
+                      <option value="">Detached Bungalow</option>
+                      <option value="">Detached Duplex</option>
+                      <option value="">Land</option>
+                      <option value="">Commercial Properties</option>
                     </select>
                   </div>
 
                   <div className="basis-[50%]">
                     <select className="w-full bg-white py-2 outline-none rounded placeholder:text-xs" name="" id="">
-                      <option value="">Location</option>
-                      <option value="">Akure</option>
+                      <option value="">Bedroom</option>
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                      <option value="">4</option>
+                      <option value="">5</option>
+                      <option value="">6+</option>
                     </select>
                   </div>
                 </div>

@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 type Props = {}
 
-const PropertiesDetails = (props: Props) => {
+const PropertiesCard = (props: Props) => {
   return (
     <Link href={`/ListingDetails/1`}>
         <div className='border rounded-xl shadow-md hover:shadow-2xl cursor-pointer'>
@@ -21,17 +21,17 @@ const PropertiesDetails = (props: Props) => {
                 <p className="hidden text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, voluptatum.</p>
                 {/* <div className="w-full h-px bg-[#eee] my-2"></div> */}
                 <h3 className='font-semibold text-lg'>₦400,000</h3>
-                <div className='mt-1 flex items-center gap-2'>
+                <div className='mt-1 flex items-center gap-2 text-sm'>
                     <div className='flex items-center gap-1'>
-                        <strong>3</strong>
+                        <div className='font-semibold'>3</div>
                         <p>Bed</p>
                     </div>
                     <div className='flex items-center gap-1'>
-                        <strong>2</strong>
+                        <div className='font-semibold'>2</div>
                         <p>Bath</p>
                     </div>
                     <div className='flex items-center gap-1'>
-                        <strong>2,690</strong>
+                        <div className='font-semibold'>2,690</div>
                         <p>Sqft</p>
                     </div>
                 </div>
@@ -48,4 +48,4 @@ const PropertiesDetails = (props: Props) => {
   )
 }
 
-export default PropertiesDetails
+export default PropertiesCard

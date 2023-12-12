@@ -1,4 +1,4 @@
-import PropertiesDetails from "./PropertiesDetails"
+import PropertiesCard from "./PropertiesCard"
 
 
 type Props = {}
@@ -14,14 +14,14 @@ const Properties = (props: Props) => {
       <div className='my-8 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-4'>
         {/* LISTINGS */}
 
-        <PropertiesDetails />
-        <PropertiesDetails />
-        <PropertiesDetails />
-        <PropertiesDetails />
-        <PropertiesDetails />
-        <PropertiesDetails />
-        <PropertiesDetails />
-        <PropertiesDetails />
+        <PropertiesCard />
+        <PropertiesCard />
+        <PropertiesCard />
+        <PropertiesCard />
+        <PropertiesCard />
+        <PropertiesCard />
+        <PropertiesCard />
+        <PropertiesCard />
 
       {/* END LISTINGS */}
       </div>

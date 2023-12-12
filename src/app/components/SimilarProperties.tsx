@@ -1,5 +1,5 @@
 import React from 'react'
-import PropertiesDetails from './PropertiesDetails'
+import PropertiesCard from './PropertiesCard'
 
 type Props = {}
 
@@ -9,10 +9,10 @@ const SimilarProperties = (props: Props) => {
         <div className='text-lg font-semibold'>Homes Around ₦500,000</div>
         <div className='mt-5'>
             <div>
-                <PropertiesDetails />
+                <PropertiesCard />
             </div>
             <div className='mt-5'>
-                <PropertiesDetails />
+                <PropertiesCard />
             </div>
         </div>
     </>

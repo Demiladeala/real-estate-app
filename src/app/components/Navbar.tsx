@@ -2,13 +2,28 @@
 import Image from "next/image"
 import logo from '../../../public/logo.png'
 import { RiMenu4Fill } from "react-icons/ri";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 type Props = {}
 
 const Navbar = (props: Props) => {
     const [nav, setNav ] = useState(false);
+    const [hasShadow, setHasShadow] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+          const isScrolled = window.scrollY > 0;
+          setHasShadow(isScrolled);
+        };
+    
+        window.addEventListener("scroll", handleScroll);
+    
+        return () => {
+          window.removeEventListener("scroll", handleScroll);
+        };
+      }, []);
+
 
     const toggleNav = () => {
         setNav(!nav);
@@ -16,7 +31,9 @@ const Navbar = (props: Props) => {
 
   return (
     <>
-    <div className='z-50 fixed top-0 left-0 p-4 bg-white  w-full flex justify-between items-center'>
+    <div className={`z-50 fixed top-0 left-0 p-4 w-full flex justify-between items-center ${
+          hasShadow ? "bg-white shadow-xl" : "bg-transparent"
+        }`}>
         <div>
             <Link href='/'>
                 <Image
@@ -26,10 +43,10 @@ const Navbar = (props: Props) => {
         </div>
 
         <div className="hidden md:flex items-center gap-6 font-medium">
-            <h4 className="cursor-pointer">BUY</h4>
-            <h4 className="cursor-pointer">RENT</h4>
-            <h4 className="cursor-pointer">SELL</h4>
-            <h4 className="cursor-pointer">LAND</h4>
+            <Link href='/BuyListings'><h4 className="cursor-pointer">BUY</h4></Link>
+            <Link href='/RentListings'><h4 className="cursor-pointer">RENT</h4></Link>
+            <Link href='/SellProperty'><h4 className="cursor-pointer">SELL</h4></Link>
+            <Link href='/LandListings'><h4 className="cursor-pointer">LAND</h4></Link>
         </div>
 
         <div className="hidden md:flex items-center gap-4">
@@ -44,13 +61,13 @@ const Navbar = (props: Props) => {
 
     { nav && 
     (   <div className="w-full fixed bg-white shadow-xl px-5 py-3 pt-20 space-y-2 top-0 left-0 md:hidden z-10 list-none">
-            <li>BUY</li>
+            <Link href='/BuyListings'><li>BUY</li></Link>
             <div className="w-full h-px bg-[#eee]"></div>
-            <li>RENT</li>
+            <Link href='/RentListings'><li>RENT</li></Link>
             <div className="w-full h-px bg-[#eee]"></div>
-            <li>SELL</li>
+            <Link href='/SellProperty'><li>SELL</li></Link>
             <div className="w-full h-px bg-[#eee]"></div>
-            <li>LAND</li>
+            <Link href='/LandListings'><li>LAND</li></Link>
             <div className="w-full h-px bg-[#eee]"></div>
             <li>LOGIN</li>
             <div className="w-full h-px bg-[#eee]"></div>
