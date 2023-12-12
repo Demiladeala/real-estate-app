@@ -19,8 +19,9 @@ body::-webkit-scrollbar-thumb{
 }
 .footer-bg{
   width: 100%;
-  background-image: linear-gradient(#fafafaf3, #fafafaf3), url("../../public/footer-bg.png");
+  background-image: linear-gradient(#efefefc0, #efefefc0), url("../../public/footer-bg.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  object-fit: cover;
 }

@@ -9,6 +9,7 @@ import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { FiSearch } from "react-icons/fi";
+import InsetBg from "../utils/InsetBg"
 
 type Props = {}
 
@@ -25,7 +26,7 @@ const Hero = (props: Props) => {
     >
       <SwiperSlide>
         <div className='relative mt-24 w-[95%] h-[20rem] md:h-[34rem] md:w-[96%] lg:w-[98%] mx-auto'>
-        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30 rounded-xl"></div>
+          <InsetBg />
             <Image 
             alt="hero"
             src={hero}
@@ -74,7 +75,7 @@ const Hero = (props: Props) => {
 
     <SwiperSlide>
         <div className='relative mt-24 w-[95%] h-[20rem] md:h-[34rem] md:w-[96%] lg:w-[98%] mx-auto'>
-          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30 rounded-xl"></div>
+            <InsetBg />
             <Image 
             alt="hero"
             src={hero2}
@@ -124,7 +125,7 @@ const Hero = (props: Props) => {
 
     <SwiperSlide>
         <div className='relative mt-24 w-[95%] h-[20rem] md:h-[34rem] md:w-[96%] lg:w-[98%] mx-auto'>
-          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30 rounded-xl"></div>
+            <InsetBg />
             <Image 
             alt="hero"
             src={hero3}
@@ -174,7 +175,7 @@ const Hero = (props: Props) => {
 
     <SwiperSlide>
         <div className='relative mt-24 w-[95%] h-[20rem] md:h-[34rem] md:w-[96%] lg:w-[98%] mx-auto'>
-          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30 rounded-xl"></div>
+            <InsetBg />
             <Image 
             alt="hero"
             src={hero4}
