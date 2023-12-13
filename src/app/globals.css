@@ -6,7 +6,7 @@
   -webkit-tap-highlight-color: transparent;
 }
 body{
-  background: #fefefe;
+  background: #fcfcfc;
 }
 body::-webkit-scrollbar-thumb{
   width: 8px;
@@ -20,7 +20,7 @@ body::-webkit-scrollbar-thumb{
 }
 .footer-bg{
   width: 100%;
-  background-image: linear-gradient(#efefefc0, #efefefc0), url("../../public/footer-bg.png");
+  background-image: linear-gradient(#efefefef, #efefefef), url("../../public/footer-bg.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

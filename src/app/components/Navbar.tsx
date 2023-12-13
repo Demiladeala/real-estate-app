@@ -32,7 +32,7 @@ const Navbar = (props: Props) => {
   return (
     <>
     <div className={`z-50 fixed top-0 left-0 p-4 w-full flex justify-between items-center ${
-          hasShadow ? "bg-white shadow-xl" : "bg-transparent"
+          (hasShadow && !nav) ? "bg-white shadow-xl" : "bg-white border-b border-gray-200"
         }`}>
         <div>
             <Link href='/'>
