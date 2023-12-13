@@ -45,7 +45,6 @@ const Navbar = (props: Props) => {
         <div className="hidden md:flex items-center gap-6 font-medium">
             <Link href='/BuyListings'><h4 className="cursor-pointer">BUY</h4></Link>
             <Link href='/RentListings'><h4 className="cursor-pointer">RENT</h4></Link>
-            <Link href='/SellProperty'><h4 className="cursor-pointer">SELL</h4></Link>
             <Link href='/LandListings'><h4 className="cursor-pointer">LAND</h4></Link>
         </div>
 
@@ -64,8 +63,6 @@ const Navbar = (props: Props) => {
             <Link href='/BuyListings'><li>BUY</li></Link>
             <div className="w-full h-px bg-[#eee]"></div>
             <Link href='/RentListings'><li>RENT</li></Link>
-            <div className="w-full h-px bg-[#eee]"></div>
-            <Link href='/SellProperty'><li>SELL</li></Link>
             <div className="w-full h-px bg-[#eee]"></div>
             <Link href='/LandListings'><li>LAND</li></Link>
             <div className="w-full h-px bg-[#eee]"></div>
