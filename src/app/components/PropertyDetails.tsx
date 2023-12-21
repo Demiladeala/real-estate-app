@@ -42,7 +42,6 @@ const PropertyDetails = (props: Props) => {
         <div className='mt-8 text-lg font-semibold'>Essential Information</div>
 
         <div>
-           <EssentialInformation information='Property Type' value='Single Family' />
            <EssentialInformation information='Price' value='₦500,000' />
            <EssentialInformation information='Type' value='Residential' />
            <EssentialInformation information='Status' value='Active' />

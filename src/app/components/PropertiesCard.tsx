@@ -6,14 +6,15 @@ type Props = {}
 
 const PropertiesCard = (props: Props) => {
   return (
-    <Link href={`/ListingDetails/1`}>
         <div className='border rounded-xl shadow-md hover:shadow-2xl cursor-pointer'>
             <div className='w-full h-[13rem] rounded-xl'>
+            <Link href={`/ListingDetails/1`}>
                 <Image 
                 className='w-full h-full bg-center bg-no-repeat object-cover rounded-tl-xl rounded-tr-xl'
                 alt="property"
                 src={image1}
                 />
+            </Link>
             </div>
 
             <div className='p-3'>
@@ -44,7 +45,6 @@ const PropertiesCard = (props: Props) => {
                 </div>
             </div>
         </div>
-    </Link>
   )
 }
 

@@ -1,3 +1,4 @@
+import Link from "next/link"
 import PropertiesCard from "./PropertiesCard"
 
 
@@ -27,7 +28,7 @@ const Properties = (props: Props) => {
       </div>
 
       <div className='my-8 w-full flex justify-center items-center'>
-        <button className='px-3 py-2 bg-[#222] text-white rounded-lg hover:opacity-90'>Browse More Properties</button>
+        <Link href="/BuyListings"><button className='px-3 py-2 bg-[#222] text-white rounded-lg hover:opacity-90'>Browse More Properties</button></Link>
       </div>
 
     </div>
