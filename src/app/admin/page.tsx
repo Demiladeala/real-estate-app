@@ -46,15 +46,16 @@ const page = (props: Props) => {
                 className='cursor-pointer text-sm text-slate-600'/>
 
                 <div className='mt-8'>
-                  <h2 className='w-full bg-white p-2 rounded-lg shadow'>Add New Property</h2>
+                  <h2 className='w-full bg-white p-2 rounded-lg shadow'>Property / Add New Property</h2>
 
                   <main className='mt-7 w-full bg-white p-2 rounded-lg shadow lg:px-4'>
                     <div className="mt-5 flex items-center gap-3">
-                      <div className='relative'>
-                        <h2 className='text-gray-600'>Add Property</h2>
+                      <div className='relative cursor-pointer'>
+                        <h2 className='text-dark-800 font-semibold'>Add Property</h2>
+                        <Line className='absolute top-3 bg-orange-600'/>
                       </div>
 
-                      <div className='relative'>
+                      <div className='relative cursor-pointer'>
                         <h2>Add Land </h2>
                       </div>
                     </div>
@@ -119,6 +120,11 @@ const page = (props: Props) => {
                         <Input type='number' className='placeholder:text-sm placeholder:text-[#6e6e6e]' />
                       </div>
 
+                      <div>
+                        <h4 className='text-[#3d4465] font-medium'>Nearby Schools</h4>
+                        <Input type='text' className='placeholder:text-sm placeholder:text-[#6e6e6e]' />
+                      </div>
+
                     </div>
 
                     <div className='my-5'>
@@ -126,6 +132,28 @@ const page = (props: Props) => {
                         <textarea rows={5}  className='mt-2 w-full text-sm text-[#6e6e6e] p-2 rounded-lg border border-gray-400 outline-none placeholder:text-sm placeholder:text-[#6e6e6e] resize-none'>
 
                         </textarea>
+                    </div>
+
+                    <div>
+                    <input
+                      type="file"
+                      accept="image/*"
+                      multiple
+                    />
+                    </div>
+
+                    <div className='w-full mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-5'>
+                      
+                      <div>
+                        <h4 className='text-[#3d4465] font-medium'>Address</h4>
+                        <Input type='text' className='placeholder:text-sm placeholder:text-[#6e6e6e]' />
+                      </div>
+
+                      <div>
+                        <h4 className='text-[#3d4465] font-medium'>Property Price</h4>
+                        <Input type='number' className='placeholder:text-sm placeholder:text-[#6e6e6e]' />
+                      </div>
+
                     </div>
 
                   </main>
