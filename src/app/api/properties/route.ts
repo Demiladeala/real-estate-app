@@ -1,6 +1,5 @@
 import { NextResponse, NextRequest } from "next/server";
 import dbClient from "@/app/utils/dbClient";
-import { cookies } from "next/headers";
 
 type RequestParams = {
     images: string[];

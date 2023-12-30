@@ -2,7 +2,7 @@ import React from 'react'
 
 type Props = {
     type: string;
-    placeholder: string;
+    placeholder?: string;
     className?: string;
 }
 
