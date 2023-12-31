@@ -2,19 +2,11 @@
 import { AlignJustify, Home, Layers3, LayoutDashboard, Settings } from 'lucide-react'
 import React, { useState } from 'react'
 import Line from '../utils/Line'
-import { useModalStore } from '../Store/ModalStore'
 import Input from '../utils/Input'
 
 type Props = {}
 
 const page = (props: Props) => {
-  const { openModal, currentModal, closeModal } = useModalStore((state) => state)
-  const [nav, setNav] = useState(true);
-
-  const toggleNav = () => {
-    setNav(!nav)
-  }
-
   return (
     <div className='w-full'>
         <div className='w-full flex'>
@@ -42,7 +34,6 @@ const page = (props: Props) => {
               <div className='w-[90%] md:w-[95%] mx-auto'>
                 <AlignJustify 
                 size={20}
-                onClick={toggleNav} 
                 className='cursor-pointer text-sm text-slate-600'/>
 
                 <div className='mt-8'>
