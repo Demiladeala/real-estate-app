@@ -39,7 +39,7 @@ const page = (props: Props) => {
                 <div className='mt-8'>
                   <h2 className='w-full bg-white p-2 rounded-lg shadow'>Property / Add New Property</h2>
 
-                  <main className='mt-7 w-full bg-white p-2 rounded-lg shadow lg:px-4'>
+                  <main className='mt-7 mb-8 w-full bg-white p-2 rounded-lg shadow lg:px-4'>
                     <div className="mt-5 flex items-center gap-3">
                       <div className='relative cursor-pointer'>
                         <h2 className='text-dark-800 font-semibold'>Add Property</h2>
@@ -150,6 +150,86 @@ const page = (props: Props) => {
                     <div className='my-5'>
                         <h4 className='text-[#3d4465] font-medium'>Additional Features</h4>
                         <Input type='text' className='text-sm text-[#6e6e6e]' />
+                    </div>
+
+                    <div className='my-5 flex flex-wrap items-center gap-3'>
+                    <label className='text-[#6e6e6e]'>
+                      <input
+                      className='mr-2'
+                      type="checkbox"
+                      name="checkbox2"
+                      />
+                      Emergency Exit
+                    </label>
+                    <label className='text-[#6e6e6e]'>
+                      <input
+                      className='mr-2'
+                      type="checkbox"
+                      name="checkbox2"
+                      />
+                      CCTV
+                    </label>
+                    <label className='text-[#6e6e6e]'>
+                      <input
+                      className='mr-2'
+                      type="checkbox"
+                      name="checkbox2"
+                      />
+                      Free Wi-Fi
+                    </label>
+                    <label className='text-[#6e6e6e]'>
+                      <input
+                      className='mr-2'
+                      type="checkbox"
+                      name="checkbox2"
+                      />
+                      Free Parking In The Area
+                    </label>
+                    <label className='text-[#6e6e6e]'>
+                      <input
+                      className='mr-2'
+                      type="checkbox"
+                      name="checkbox2"
+                      />
+                      Swimming Pool
+                    </label>
+                    <label className='text-[#6e6e6e]'>
+                      <input
+                      className='mr-2'
+                      type="checkbox"
+                      name="checkbox2"
+                      />
+                      Air Conditioning
+                    </label>
+                    <label className='text-[#6e6e6e]'>
+                      <input
+                      className='mr-2'
+                      type="checkbox"
+                      name="checkbox2"
+                      />
+                      Elevator Lift
+                    </label>
+                    <label className='text-[#6e6e6e]'>
+                      <input
+                      className='mr-2'
+                      type="checkbox"
+                      name="checkbox2"
+                      />
+                      Balcony
+                    </label>
+                    <label className='text-[#6e6e6e]'>
+                      <input
+                      className='mr-2'
+                      type="checkbox"
+                      name="checkbox2"
+                      />
+                      Terrace
+                    </label>
+                    </div>
+                    
+                    <div className='mb-3 flex items-center gap-3'>
+                      <button className='py-[5px] px-5 rounded-lg bg-gray-700 text-gray-200 hover:bg-gray-800'>Submit</button>
+                      <button className='py-[5px] px-5 rounded-lg bg-[#ffe5df] text-[#FF6746] hover:bg-[#FF6746] hover:text-[#ffe5df]'>Cancel</button>
                     </div>
 
                   </main>

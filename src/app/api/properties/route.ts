@@ -35,7 +35,6 @@ export async function POST(req: NextRequest){
             sqft: body.sqft,
             features: body.features,
             propertyType: body.propertyType,
-            purpose: body.purpose,
             type: body.type,
             status: body.status,
             monthlyPayment: body.monthlyPayment,
