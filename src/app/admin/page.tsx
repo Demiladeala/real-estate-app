@@ -116,7 +116,7 @@ const page = (props: Props) => {
                       </div>
 
                       <div>
-                        <h4 className='text-[#3d4465] font-medium'>Other Information</h4>
+                        <h4 className='text-[#3d4465] font-medium'>Community Information</h4>
                         <Input type='number' className='placeholder:text-sm placeholder:text-[#6e6e6e]' />
                       </div>
 
@@ -154,6 +154,11 @@ const page = (props: Props) => {
                         <Input type='number' className='placeholder:text-sm placeholder:text-[#6e6e6e]' />
                       </div>
 
+                    </div>
+
+                    <div className='my-5'>
+                        <h4 className='text-[#3d4465] font-medium'>Additional Features</h4>
+                        <Input type='text' className='text-sm text-[#6e6e6e]' />
                     </div>
 
                   </main>
