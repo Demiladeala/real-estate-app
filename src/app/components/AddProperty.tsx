@@ -179,7 +179,7 @@ const AddProperty = (props: Props) => {
                       </div>
 
                       <div>
-                        <h4 className='text-[#3d4465] font-medium'>Nearby School</h4>
+                        <h4 className='text-[#3d4465] font-medium'>Nearby Schools</h4>
                         <Input 
                          onChange={handleInputChange}
                          name='schools'
