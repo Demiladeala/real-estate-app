@@ -2,8 +2,19 @@ import { useState } from "react";
 
 type initialStateType = {
     name?: string,
-    email?: string;
-    password?: string;
+    type?: string;
+    status?: string;
+    bed?: number,
+    bath?: number;
+    sqft?: number;
+    monthlyPayment?: number,
+    communityInformation?: string;
+    schools?: string;
+    description?: string,
+    image?: string[];
+    address?: string;
+    price?: number,
+    features?: string[];
 }
 
 type FormStateReturnType = 
