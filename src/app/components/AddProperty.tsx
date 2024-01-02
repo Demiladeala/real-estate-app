@@ -4,7 +4,7 @@ import Input from '../utils/Input'
 import axios from 'axios'
 import { useFormState } from '../utils/hooks'
 import { AlignJustify } from 'lucide-react'
-import { useCallback, useState } from 'react'
+import { ChangeEvent, useCallback, useState } from 'react'
 
 type Props = {}
 
@@ -26,6 +26,14 @@ const AddProperty = (props: Props) => {
         features: [],
       })
 
+      const [files, setFiles] = useState<FileList | null>(null);
+
+      const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files) {
+          setFiles(e.target.files);
+        }
+      };
+
       const handleInputChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => 
         {
             setProperty(event?.target.name, event?.target?.value);
@@ -46,24 +54,6 @@ const AddProperty = (props: Props) => {
         const handleBathsStatusChange = useCallback((event: React.ChangeEvent<HTMLSelectElement>) => {
             setBaths(event.target.value);
         }, []);
-
-        
-
-        // const handleSubmit =  async (e: React.FormEvent) => {
-        //     e.preventDefault();
-        //     const user = {
-        //         name: state.name,  
-        //         email: state.email,
-        //         password: state.password,
-        //     }
-        //     try {
-        //         //const response = await axios.post("/api/signup", user);
-        //         mutation.mutate(user as any)
-    
-        //     } catch (error) {
-                
-        //     }
-        //   }
 
 
   return (
@@ -201,12 +191,10 @@ const AddProperty = (props: Props) => {
 
                     <div>
                     <input
+                      onChange={handleFileChange}
                       type="file"
                       accept="image/*"
                       multiple
-                      onChange={handleInputChange}
-                      name='image'
-                      value={state.image} 
                     />
                     </div>
 
