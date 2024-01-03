@@ -9,7 +9,7 @@ type initialStateType = {
     sqft?: number;
     monthlyPayment?: number,
     communityInformation?: string;
-    schools?: string;
+    schools?: string[];
     description?: string,
     image?: string[];
     address?: string;

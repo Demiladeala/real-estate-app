@@ -2,64 +2,100 @@
 import Line from '../utils/Line'
 import Input from '../utils/Input'
 import axios from 'axios'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { useFormState } from '../utils/hooks'
 import { AlignJustify } from 'lucide-react'
 import { ChangeEvent, useCallback, useState } from 'react'
+import toast, { Toaster } from 'react-hot-toast'
+import Loader from '../utils/Loader'
 
 type Props = {}
 
 const AddProperty = (props: Props) => {
-    const [ state, setProperty ] = useFormState({
-        name: "",
-        type: "",
-        status:"Sale",
-        bed: 1,
-        bath: 1,
-        sqft: 0,
-        monthlyPayment: 0,
-        communityInformation: "",
-        schools: "",
-        description: "",
-        image: [],
-        address: "",
-        price: 0,
-        features: [],
-      })
+  const queryClient = useQueryClient()
+  const notify = () => toast.success('Property added successfully');
+  
+  const initialPropertyState = {
+    name: "",
+    type: "",
+    status:"Sale",
+    bed: 1,
+    bath: 1,
+    sqft: 0,
+    monthlyPayment: 0,
+    communityInformation: "",
+    schools: [],
+    description: "",
+    image: [],
+    address: "",
+    price: 0,
+    features: [],
+  }
+  const [state, setProperty] = useFormState(initialPropertyState);
 
-      const [files, setFiles] = useState<FileList | null>(null);
+    const [files, setFiles] = useState<FileList | null>(null);
 
-      const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
-        if (e.target.files) {
-          setFiles(e.target.files);
-        }
-      };
+    const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+      if (e.target.files) {
+        setFiles(e.target.files);
+      }
+    };
 
-      const handleInputChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => 
-        {
-            setProperty(event?.target.name, event?.target?.value);
-        }, [setProperty]);
+    const handleInputChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => 
+      {
+          setProperty(event?.target.name, event?.target?.value);
+      }, [setProperty]);
 
-        const [propertyStatus, setPropertyStatus] = useState('Sale');
-        const [beds, setBeds] = useState('1');
-        const [baths, setBaths] = useState('1');
+    const [propertyStatus, setPropertyStatus] = useState('Sale');
+    const [beds, setBeds] = useState('1');
+    const [baths, setBaths] = useState('1');
 
-        const handlePropertyStatusChange = useCallback((event: React.ChangeEvent<HTMLSelectElement>) => {
-            setPropertyStatus(event.target.value);
-        }, []);
+    const handlePropertyStatusChange = useCallback((event: React.ChangeEvent<HTMLSelectElement>) => {
+        setPropertyStatus(event.target.value);
+    }, []);
 
-        const handleBedsStatusChange = useCallback((event: React.ChangeEvent<HTMLSelectElement>) => {
-            setBeds(event.target.value);
-        }, []);
+    const handleBedsStatusChange = useCallback((event: React.ChangeEvent<HTMLSelectElement>) => {
+        setBeds(event.target.value);
+    }, []);
 
-        const handleBathsStatusChange = useCallback((event: React.ChangeEvent<HTMLSelectElement>) => {
-            setBaths(event.target.value);
-        }, []);
+    const handleBathsStatusChange = useCallback((event: React.ChangeEvent<HTMLSelectElement>) => {
+        setBaths(event.target.value);
+    }, []);
 
+    const {mutate:submitProperty } = useMutation({
+      mutationFn: async() => await axios.post('/api/properties', {
+        images: files,
+        name: state.name,
+        description: state.description,
+        address: state.address,
+        price: state.price,
+        bedrooms: beds,    
+        bathrooms: baths,
+        sqft: state.sqft,
+        features: state.features,
+        propertyType: state.type,
+        type: "property",
+        status: propertyStatus,
+        monthlyPayment: state.monthlyPayment,
+        nearbySchools: state.schools,
+        communicationInfo: state.communityInformation,
+      }),
+      onSuccess: () => {
+        notify()
+        setFiles(null)
+        setBeds("1")
+        setBaths("1")
+      },
+      onError: () => {
+        toast.error('Something went wrong, please try again')
+      }
+    })
 
   return (
     <section className='w-full py-3'>
+      <Toaster />
               <div className='w-[90%] md:w-[95%] mx-auto'>
-                <AlignJustify 
+                <AlignJustify
                 size={20}
                 className='cursor-pointer text-sm text-slate-600'/>
 
@@ -230,7 +266,9 @@ const AddProperty = (props: Props) => {
                     </div>
 
                     <div className='mb-3 flex items-center gap-3'>
-                      <button type='submit' className='py-[5px] px-5 rounded-lg bg-gray-700 text-gray-200 hover:bg-gray-800'>Submit</button>
+                      <button 
+                      onClick={() => submitProperty()}
+                      type='submit' className='py-[5px] px-5 rounded-lg bg-gray-700 text-gray-200 hover:bg-gray-800'>Submit</button>
                       <button className='py-[5px] px-5 rounded-lg bg-[#ffe5df] text-[#FF6746] hover:bg-[#FF6746] hover:text-[#ffe5df]'>Cancel</button>
                     </div>
 
