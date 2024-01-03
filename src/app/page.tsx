@@ -1,3 +1,7 @@
+"use client"
+import { useModalStore } from './Store/ModalStore'
+import LoginModal from './components/LoginModal'
+import SignupModal from './components/SignupModal'
 import Banner from './components/Banner'
 import ClientsMarquee from './components/ClientsMarquee'
 import Experts from './components/Experts'
@@ -8,6 +12,7 @@ import Properties from './components/Properties'
 import Services from './components/Services'
 
 export default function Home() {
+  const { openModal, currentModal, closeModal } = useModalStore((state) => state)
   return (
     <div>
       <section id='navbar'>
@@ -41,6 +46,10 @@ export default function Home() {
       <section>
         <Footer />
       </section>
+
+      {currentModal === 1 && <LoginModal />}
+      {currentModal === 2 && <SignupModal />}
+      
     </div>
   )
 }

@@ -4,12 +4,14 @@ import logo from '../../../public/logo.png'
 import { RiMenu4Fill } from "react-icons/ri";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useModalStore } from "../Store/ModalStore";
 
 type Props = {}
 
 const Navbar = (props: Props) => {
     const [nav, setNav ] = useState(false);
     const [hasShadow, setHasShadow] = useState(false);
+    const { openModal } = useModalStore((state) => state)
 
     useEffect(() => {
         const handleScroll = () => {
@@ -49,8 +51,16 @@ const Navbar = (props: Props) => {
         </div>
 
         <div className="hidden md:flex items-center gap-4">
-            <button className="bg-[#222] text-white py-[6px] px-4 rounded-lg border hover:border-[#222] hover:bg-transparent hover:text-[#222]">LOGIN</button>
-            <button className="py-[6px] px-4 rounded-lg shadow-xl border hover:bg-[#fbfbfb]">SIGNUP</button>
+            <button
+            onClick={()=> openModal(1)} 
+            className="bg-[#222] text-white py-[6px] px-4 rounded-lg border hover:border-[#222] hover:bg-transparent hover:text-[#222]">
+              LOGIN
+            </button>
+            <button 
+            onClick={()=> openModal(2)} 
+            className="py-[6px] px-4 rounded-lg shadow-xl border hover:bg-[#fbfbfb]">
+              SIGNUP
+            </button>
         </div>
 
         <div className="md:hidden pr-3">
@@ -66,9 +76,9 @@ const Navbar = (props: Props) => {
             <div className="w-full h-px bg-[#eee]"></div>
             <Link href='/LandListings'><li>LAND</li></Link>
             <div className="w-full h-px bg-[#eee]"></div>
-            <li>LOGIN</li>
+            <li onClick={()=> openModal(1)} >LOGIN</li>
             <div className="w-full h-px bg-[#eee]"></div>
-            <li>SIGNUP</li>
+            <li onClick={()=> openModal(2)} >SIGNUP</li>
         </div>
     )}
 </>
