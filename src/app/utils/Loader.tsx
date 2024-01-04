@@ -6,8 +6,8 @@ const Loader = (props: Props) => {
   return (
     <ThreeDots
     visible={true}
-    height="60"
-    width="60"
+    height="30"
+    width="30"
     color="#ddd"
     radius="9"
     ariaLabel="three-dots-loading"

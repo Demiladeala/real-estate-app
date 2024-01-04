@@ -62,7 +62,7 @@ const AddProperty = (props: Props) => {
         setBaths(event.target.value);
     }, []);
 
-    const {mutate:submitProperty } = useMutation({
+    const {mutate:submitProperty, isPending } = useMutation({
       mutationFn: async() => await axios.post('/api/properties', {
         images: files,
         name: state.name,
@@ -266,9 +266,15 @@ const AddProperty = (props: Props) => {
                     </div>
 
                     <div className='mb-3 flex items-center gap-3'>
+                      
                       <button 
                       onClick={() => submitProperty()}
-                      type='submit' className='py-[5px] px-5 rounded-lg bg-gray-700 text-gray-200 hover:bg-gray-800'>Submit</button>
+                      type='submit' className='py-[5px] px-5 rounded-lg bg-gray-700 text-gray-200 hover:bg-gray-800'>
+                        {isPending ?
+                        (<Loader />) :
+                        <> Submit </> 
+                        }
+                      </button>
                       <button className='py-[5px] px-5 rounded-lg bg-[#ffe5df] text-[#FF6746] hover:bg-[#FF6746] hover:text-[#ffe5df]'>Cancel</button>
                     </div>
 
