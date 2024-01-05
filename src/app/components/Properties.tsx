@@ -10,7 +10,7 @@ const Properties = (props: Props) => {
     <div className='mt-20 md:mt-24'></div>
     <div className='w-[95%] mx-auto'>
       <h2 className='text-2xl md:text-3xl text-[#222]'>Featured <strong>Properties</strong></h2>
-      <p>Browse homes around ₦500,000 in Abuja, Nigeria</p>
+      <p>Browse homes around ₦10,000,000 in Abuja, Nigeria</p>
 
       <div className='my-8 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-4'>
         {/* LISTINGS */}
