@@ -6,24 +6,24 @@ import axios from "axios"
 
 
 type Props = {
-  id?: number;
-  images?: string[];
-  name?: string;
-  description?: string;
-  address?: string;
-  price?: number;
-  bedrooms?: number;
-  bathrooms?: number;
-  sqft?: number;
-  features?: string[];
-  propertyType?: string;
-  type?: string;
-  status?: string;
+  id: number;
+  images: string[];
+  name: string;
+  description: string;
+  address: string;
+  price: number;
+  bedrooms: number;
+  bathrooms: number;
+  sqft: number;
+  features: string[];
+  propertyType: string;
+  type: string;
+  status: string;
   monthlyPayment?: number | null;
-  nearbySchools?: string[];
-  communicationInfo?: string;
-  createdAt?: string;
-  updatedAt?: string;
+  nearbySchools: string[];
+  communicationInfo: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
 const LoadingSkeleton = () => (
@@ -35,7 +35,7 @@ const LoadingSkeleton = () => (
   </div>
 );
 
-const Properties = (props: Props) => {
+const Properties = () => {
   const {data, isPending, isError, error } = useQuery({
     queryKey: ["userProperties"],
     queryFn: async () => {
