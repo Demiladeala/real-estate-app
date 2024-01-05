@@ -25,21 +25,20 @@ export async function POST(req: NextRequest){
 
     const propertiesResult = await dbClient.property.create({
         data: {
-            images: ["hhttps://crimsonoaks.com.ng/wp-content/uploads/2023/05/7351f264-5075-48b4-b3af-d6fb52bc07ee-1080x570.jpg", "https://crimsonoaks.com.ng/wp-content/uploads/2023/05/57f62263-0c0b-44e9-870c-6d31a6b01459-1080x570.jpg"],
-            name: "Modern Apartment",
-            description: "State-of-the-art apartment complex with multiple units and amenities.",
-            address: "Metropolitan Towers, Gwarinpa",
-            price: 485000000,
-            bedrooms: 5,    
-            bathrooms: 6,
-            sqft: 4000,
-            features:["Multiple Units", "Swimming Pool", "Fitness Center"],
-            propertyType: "Apartment Complex",
-            type: "land",
+            images: ["https://static.giggster.com/images/location/ca5202c1-854f-4eb2-83c0-635c5f1e01e4/d859ba35-e9fa-474f-8b44-dfe8ae061b22/gallery_2.jpeg", "https://static.giggster.com/images/location/ca5202c1-854f-4eb2-83c0-635c5f1e01e4/4dcc199d-0c60-4858-8a8b-8158ee0f4992/gallery_2.jpeg"],
+            name: "Luxury Condominium with City Views",
+            description: "Spacious condominium with panoramic views of the city.",
+            address: "Skyline Residences, Maitama",
+            price: 12000000,
+            bedrooms: 3,    
+            bathrooms: 2,
+            sqft: 1800,
+            features:["City Views", "Swimming Pool", "Fitness Center"],
+            propertyType: "Condominium",
+            type: "property",
             status: "Sale",
-            monthlyPayment: 180000,
-            nearbySchools: ["Gwarinpa Secondary School"],
-            communicationInfo: "Family-friendly neighborhood with recreational facilities",
+            nearbySchools: ["Maitama Academy"],
+            communicationInfo: "Easy access to public transportation",
         }
     })
 

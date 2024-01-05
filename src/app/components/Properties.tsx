@@ -71,14 +71,18 @@ const Properties = (props: Props) => {
             ))}
           </> : 
           <>
-          {data.map((property:Props) => (
+          {data
+          .filter((property: Props) => property.type === 'property' && property.price <= 10000000)
+          .map((property:Props) => (
             <div key={property.id} className='border rounded-xl shadow-md hover:shadow-2xl cursor-pointer'>
               <div className='w-full h-[13rem] rounded-xl'>
                 <Link href={`/ListingDetails/${property.id}`}>
                     <Image 
                     className='w-full h-full bg-center bg-no-repeat object-cover rounded-tl-xl rounded-tr-xl'
                     alt="property"
-                    src={image1}
+                    src={property.images[0]}
+                    width={500}
+                    height={500}
                     />
                 </Link>
               </div>
@@ -118,7 +122,7 @@ const Properties = (props: Props) => {
       </div>
 
       <div className='my-8 w-full flex justify-center items-center'>
-        <Link href="/BuyListings"><button className='px-3 py-2 bg-[#222] text-white rounded-lg hover:opacity-90'>Browse More Properties</button></Link>
+        <Link href="/BuyListings"><button className='px-5 py-3 bg-[#222] text-white rounded-lg hover:opacity-90'>Browse More Properties</button></Link>
       </div>
 
     </div>
