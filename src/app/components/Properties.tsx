@@ -35,7 +35,7 @@ const LoadingSkeleton = () => (
   </div>
 );
 
-const Properties = (props: Props) => {
+const Properties = () => {
   const {data, isPending, isError, error } = useQuery({
     queryKey: ["userProperties"],
     queryFn: async () => {

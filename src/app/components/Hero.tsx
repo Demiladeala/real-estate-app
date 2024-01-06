@@ -37,7 +37,7 @@ const Hero = (props: Props) => {
                 Buy or Rent Properties <br /> with no commission
               </h2>
 
-              <div className="mt-4 md:mt-8 w-[80%] py-5 px-5 rounded bg-white/70 flex flex-col md:flex-row-reverse gap-5">
+              <div className="mt-4 md:mt-8 w-[80%] py-5 px-2 rounded bg-white/70 flex flex-col md:flex-row-reverse gap-5">
                 
                 <div className="relative w-full basis-[100%] md:basis-[50%] flex">
                   <input
@@ -97,7 +97,7 @@ const Hero = (props: Props) => {
                 Unlock Your Dream Home
               </h2>
 
-              <div className="mt-4 md:mt-8 w-[80%] py-5 px-5 rounded bg-white/70 flex flex-col md:flex-row-reverse gap-5">
+              <div className="mt-4 md:mt-8 w-[80%] py-5 px-2 rounded bg-white/70 flex flex-col md:flex-row-reverse gap-5">
                 
                 <div className="relative w-full basis-[100%] md:basis-[50%] flex">
                   <input
@@ -157,7 +157,7 @@ const Hero = (props: Props) => {
                 Discover Your Ideal <br />Living Space
               </h2>
 
-              <div className="mt-4 md:mt-8 w-[80%] py-5 px-5 rounded bg-white/70 flex flex-col md:flex-row-reverse gap-5">
+              <div className="mt-4 md:mt-8 w-[80%] py-5 px-2 rounded bg-white/70 flex flex-col md:flex-row-reverse gap-5">
                 
                 <div className="relative w-full basis-[100%] md:basis-[50%] flex">
                   <input
@@ -207,7 +207,7 @@ const Hero = (props: Props) => {
                 Desirable Features: A Home <br />Beyond the Basics
               </h2>
 
-              <div className="mt-4 md:mt-8 w-[80%] py-5 px-5 rounded bg-white/70 flex flex-col md:flex-row-reverse gap-5">
+              <div className="mt-4 md:mt-8 w-[80%] py-5 px-2 rounded bg-white/70 flex flex-col md:flex-row-reverse gap-5">
                 
                 <div className="relative w-full basis-[100%] md:basis-[50%] flex">
                   <input

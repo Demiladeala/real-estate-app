@@ -25,20 +25,20 @@ export async function POST(req: NextRequest){
 
     const propertiesResult = await dbClient.property.create({
         data: {
-            images: ["https://static.giggster.com/images/location/ca5202c1-854f-4eb2-83c0-635c5f1e01e4/d859ba35-e9fa-474f-8b44-dfe8ae061b22/gallery_2.jpeg", "https://static.giggster.com/images/location/ca5202c1-854f-4eb2-83c0-635c5f1e01e4/4dcc199d-0c60-4858-8a8b-8158ee0f4992/gallery_2.jpeg"],
-            name: "Luxury Condominium with City Views",
-            description: "Spacious condominium with panoramic views of the city.",
-            address: "Skyline Residences, Maitama",
-            price: 12000000,
-            bedrooms: 3,    
-            bathrooms: 2,
-            sqft: 1800,
-            features:["City Views", "Swimming Pool", "Fitness Center"],
-            propertyType: "Condominium",
+            images: ["https://images.nigeriapropertycentre.com/properties/images/1063688/06135f26d98275-shopoffice-space-at-wuse-2-shops-for-rent-wuse-2-abuja.jpg"],
+            name: "Commercial Retail Space",
+            description: "State-of-the-art apartment complex with multiple units and amenities.",
+            address: "Metropolitan Towers, Mabushi",
+            price: 90000000,
+            bedrooms: 10,    
+            bathrooms: 12,
+            sqft: 8000,
+            features:["Multiple Units", "Swimming Pool", "Fitness Center"],
+            propertyType: "Apartment",
             type: "property",
-            status: "Sale",
-            nearbySchools: ["Maitama Academy"],
-            communicationInfo: "Easy access to public transportation",
+            status: "Rent",
+            nearbySchools: ["Mabushi High School"],
+            communicationInfo: "Family-friendly neighborhood with recreational facilities",
         }
     })
 

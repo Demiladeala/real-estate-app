@@ -16,6 +16,12 @@ module.exports = {
         'crimsonoaks.com.ng',
         'www.mesitis.com.cy',
         'static.giggster.com',
+        'assets.iwgplc.com',
+        'www.wienerberger.co.uk',
+        'hanoirealestate.com.vn',
+        'www.engelvoelkers.com',
+        'cf.bstatic.com',
+        'images1.apartments.com',d
       ],
     },
   };
