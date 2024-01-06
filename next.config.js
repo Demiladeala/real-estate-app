@@ -21,7 +21,7 @@ module.exports = {
         'hanoirealestate.com.vn',
         'www.engelvoelkers.com',
         'cf.bstatic.com',
-        'images1.apartments.com',d
+        'images1.apartments.com',
       ],
     },
   };
