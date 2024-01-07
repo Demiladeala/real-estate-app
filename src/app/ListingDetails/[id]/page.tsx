@@ -8,7 +8,7 @@ type Props = {}
 const index = (props: Props) => {
   return (
     <div>
-        <section id='navbar'>
+        <section id='navbarHeader'>
           <Navbar />
         </section>
 
