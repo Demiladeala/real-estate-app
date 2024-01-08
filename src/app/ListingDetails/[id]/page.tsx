@@ -2,10 +2,7 @@ import Footer from "@/app/components/Footer"
 import ListingDetails from "@/app/components/ListingDetails"
 import Navbar from "@/app/components/Navbar"
 
-
-type Props = {}
-
-const index = (props: Props) => {
+const index = () => {
   return (
     <div>
         <section id='navbar'>

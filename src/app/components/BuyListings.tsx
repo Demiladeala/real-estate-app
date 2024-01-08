@@ -75,7 +75,7 @@ const BuyListings = () => {
             </> : 
             <>
             {data
-            .filter((property: Props) => property.status === 'Sale')
+            .filter((property: Props) => property.status === 'Sale' && property.type === 'property')
             .map((property:Props) => (
             <div key={property.id} className='border rounded-xl shadow-md hover:shadow-2xl cursor-pointer'>
               <div className='w-full h-[13rem] rounded-xl'>

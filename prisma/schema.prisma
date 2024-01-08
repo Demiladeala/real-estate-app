@@ -28,6 +28,7 @@ model Property {
   bedrooms Int
   bathrooms Int
   sqft Int
+  acre Float?
   features String[]
   propertyType String
   type String

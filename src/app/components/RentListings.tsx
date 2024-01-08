@@ -1,7 +1,6 @@
 "use client"
 import React from 'react'
 import SearchListings from './SearchListings'
-import PropertiesCard from './PropertiesCard'
 import Experts from './Experts'
 import ClientsMarquee from './ClientsMarquee'
 import { useQuery } from '@tanstack/react-query'
@@ -75,7 +74,7 @@ const RentListings = () => {
             </> : 
             <>
             {data
-              .filter((property: Props) => property.status === 'Rent')
+              .filter((property: Props) => property.status === 'Rent' && property.type === 'property')
               .map((property:Props) => (
               <div key={property.id} className='border rounded-xl shadow-md hover:shadow-2xl cursor-pointer'>
                 <div className='w-full h-[13rem] rounded-xl'>

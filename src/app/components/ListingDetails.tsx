@@ -1,25 +1,36 @@
-"use client"
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination, Autoplay, Navigation } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import 'swiper/css/autoplay';
-import listingImage1 from "../../../public/property-image-1.jpg"
-import listingImage2 from "../../../public/listing-image1.jpg"
-import listingImage3 from "../../../public/listing-image2.jpg"
-import listingImage4 from "../../../public/listing-image3.jpg"
-import listingImage5 from "../../../public/listing-image4.jpg"
 import ContactAgent from './ContactAgent';
-import ListingDetailsImage from '../utils/ListingDetailsImage';
 import PropertyDetails from './PropertyDetails';
 import SimilarProperties from './SimilarProperties';
-import InsetBg from '../utils/InsetBg';
 import SimilarHomes from './SimilarHomes';
+import ListingImage from './ListingImage';
+import { notFound } from 'next/navigation';
 
-type Props = {}
+export const dynamicParams = true
 
-const ListingDetails = (props: Props) => {
+export async function generateStaticParams() {
+  const res = await fetch('api/properties')
+
+  const properties = await res.json()
+ 
+  return properties.map((property:any) => ({
+    id: property.id
+  }))
+}
+
+async function getProperty(id:number) {
+  const res = await fetch(`api/properties/${id}`, {
+    next: {
+      revalidate:30
+    }
+  });
+  if (!res.ok) {
+    notFound();
+  }
+
+  return res.json();
+}
+
+const ListingDetails = () => {
   return (
     <div className='w-full lg:w-[90%] mx-auto h-full mt-[5.8rem] mb-[2rem]'>
       
@@ -32,41 +43,7 @@ const ListingDetails = (props: Props) => {
       </div>
 
       <div className='lg:flex lg:items-start lg:gap-10'>
-        <Swiper 
-          modules={[ Pagination, Navigation, Autoplay ]}
-          spaceBetween={50}
-          slidesPerView={1}
-          pagination={{ clickable: true }}
-          navigation
-          autoplay={{ delay:4000 }}
-          className='w-full h-[15rem] md:h-[25rem] lg:basis-[70%]'>
-            <SwiperSlide>
-              <InsetBg opacity='opacity-20' />
-              <ListingDetailsImage src={listingImage1}/>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <InsetBg opacity='opacity-20' />
-              <ListingDetailsImage src={listingImage2} />
-            </SwiperSlide>
-
-          <SwiperSlide>
-            <InsetBg opacity='opacity-20' />
-            <ListingDetailsImage src={listingImage3} />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <InsetBg opacity='opacity-20' />
-            <ListingDetailsImage src={listingImage4} />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <InsetBg opacity='opacity-20' />
-            <ListingDetailsImage src={listingImage5} />
-          </SwiperSlide>
-
-
-        </Swiper>
+       <ListingImage />
 
         <div className='w-full hidden lg:block border border-gray-200 py-3 px-3 rounded-xl lg:basis-[30%]'>
           <ContactAgent />

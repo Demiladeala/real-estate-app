@@ -25,19 +25,20 @@ export async function POST(req: NextRequest){
 
     const propertiesResult = await dbClient.property.create({
         data: {
-            images: ["https://images.nigeriapropertycentre.com/properties/images/1063688/06135f26d98275-shopoffice-space-at-wuse-2-shops-for-rent-wuse-2-abuja.jpg"],
-            name: "Commercial Retail Space",
-            description: "State-of-the-art apartment complex with multiple units and amenities.",
-            address: "Metropolitan Towers, Mabushi",
-            price: 90000000,
-            bedrooms: 10,    
-            bathrooms: 12,
-            sqft: 8000,
-            features:["Multiple Units", "Swimming Pool", "Fitness Center"],
-            propertyType: "Apartment",
-            type: "property",
-            status: "Rent",
-            nearbySchools: ["Mabushi High School"],
+            images: ["https://www.abujaproperties.com/wp-content/uploads/2021/11/AWUYE.png"],
+            name: "Decent Land measuring 1,305sqm at Wuye",
+            description: "A decent land measuring 1,305 sqm is available for outright sale at Wuye with building approvals. This land has CofO and its ready for sighting.",
+            address: "Wuye, Abuja",
+            price: 120000000,
+            bedrooms: 0,    
+            bathrooms: 0,
+            sqft: 1350,
+            acre: 0.0309,
+            features:[],
+            propertyType: "",
+            type: "land",
+            status: "Sale",
+            nearbySchools: ["Wuye High School"],
             communicationInfo: "Family-friendly neighborhood with recreational facilities",
         }
     })
