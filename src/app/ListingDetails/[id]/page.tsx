@@ -5,7 +5,7 @@ import Navbar from "@/app/components/Navbar"
 const index = () => {
   return (
     <div>
-        <section id='navbar'>
+        <section id='navbarHeader'>
           <Navbar />
         </section>
 
