@@ -40,15 +40,10 @@ const Properties = () => {
     queryKey: ["userProperties"],
     queryFn: async () => {
       const { data } = await axios.get("/api/properties")
-      console.log(data)
       return data
     },
   })
 
-
-  if (isError) {
-    return <span>Error: {error.message}</span>
-  }
 
   const formatPrice = (price: number) => {
     return `₦${price.toLocaleString()}`;
@@ -64,14 +59,15 @@ const Properties = () => {
       <div className='my-8 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-4'>
         {/* LISTINGS */}
         {
-          isPending ? 
+          (isPending && isError) ? 
           <>
           {Array.from({ length: 8 }, (_, index) => (
               <LoadingSkeleton key={index} />
             ))}
           </> : 
           <>
-          {data
+          {(data && data.length > 0) && 
+          data
           .filter((property: Props) => property.type === 'property' && property.price <= 10000000)
           .map((property:Props) => (
             <div key={property.id} className='border rounded-xl shadow-md hover:shadow-2xl cursor-pointer'>

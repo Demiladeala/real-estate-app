@@ -43,7 +43,6 @@ const RentListings = () => {
     queryKey: ["userProperties"],
     queryFn: async () => {
       const { data } = await axios.get("/api/properties")
-      console.log(data)
       return data
     },
   })

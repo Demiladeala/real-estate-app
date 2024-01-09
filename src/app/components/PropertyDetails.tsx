@@ -4,7 +4,19 @@ import Line from '../utils/Line'
 import EssentialInformation from '../utils/EssentialInformation'
 import { ChevronDown, ChevronUp } from 'lucide-react'
 
-type Props = {}
+type Props = {
+    beds?: string;
+    baths?:string;
+    sqft?: number;
+    acre?: number;
+    desc?: string;
+    price?: number;
+    usage?: string;
+    status?: string;
+    monthlyPayment?: number
+    nearbySchools?: String[]
+    communicationInfo?: String
+}
 
 const PropertyDetails = (props: Props) => {
     const [showFullDescription, setShowFullDescription] = useState(false);
