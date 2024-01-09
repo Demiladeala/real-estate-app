@@ -5,58 +5,71 @@ import EssentialInformation from '../utils/EssentialInformation'
 import { ChevronDown, ChevronUp } from 'lucide-react'
 
 type Props = {
-    beds?: string;
-    baths?:string;
+    beds?: number;
+    baths?:number;
     sqft?: number;
-    acre?: number;
+    acre: number;
     desc?: string;
-    price?: number;
-    usage?: string;
-    status?: string;
+    price: number;
+    usage: string;
+    status: string;
     monthlyPayment?: number
     nearbySchools?: String[]
     communicationInfo?: String
 }
 
-const PropertyDetails = (props: Props) => {
+const PropertyDetails = ({beds, baths, sqft, acre, desc, price, usage, status, monthlyPayment, nearbySchools, communicationInfo}: Props) => {
     const [showFullDescription, setShowFullDescription] = useState(false);
+    const [showMonthlyPayment, setShowMonthlyPayment] = useState(false);
+    const [showCommunityInfo, setShowCommunityInfo] = useState(false);
+    const [showSchoolInfo, setShowSchoolInfo] = useState(false);
+    const description = desc;
 
-    const description =
-    'This beautiful home is sure to impress! It features a natural color palette throughout, which is calming and serene. The kitchen is complete with a nice backsplash and plenty of counter space. Other rooms provide flexible living space, perfect for a home office or playroom. The primary bathroom boasts good under sink storage and a shower/tub combo. Step outside to the fenced in backyard and you\'ll find a sitting area, perfect for enjoying your morning coffee or an evening glass of wine. With all these great features, this home is sure to go quickly! Don\'t miss out, come see it today!';
+    const isTruncated = description && description.length > 200;
+    const truncatedDescription = isTruncated? 
+    showFullDescription ? description
+        : 
+    `${description!.slice(0, 200)}...`: description;
 
-  const truncatedDescription = showFullDescription
-    ? description
-    : `${description.slice(0, 200)}...`;
+    const formatPrice = (price: number) => {
+        return `₦${price.toLocaleString()}`;
+    };
 
   return (
     <>
         <div className='text-lg font-semibold'>Property details</div>
 
         <div className='mt-4 font-medium flex flex-wrap items-center gap-3 marker:text-[#666]'>
-            <li className='list-none'>3 beds</li>
-            <li>2 baths</li>
-            <li>2,690 sqf</li>
-            <li>2.33 acre lot</li>
+            <li className='list-none'>{beds} beds</li>
+            <li>{baths} baths</li>
+            <li>{sqft} sqft</li>
+            <li>{acre} {acre > 0 && `acre`}</li>
         </div>
 
         <div className='mt-5'>
             <p className='font-medium'>
-                {truncatedDescription}
+            {truncatedDescription && (
+            <>
+              {truncatedDescription}
+              {isTruncated && (
                 <span
-                    className='text-[#222] underline cursor-pointer'
-                    onClick={() => setShowFullDescription(!showFullDescription)}
+                  className='text-[#222] underline cursor-pointer'
+                  onClick={() => setShowFullDescription(!showFullDescription)}
                 >
-                    {showFullDescription ? ' Show Less' : ' Show More'}
+                  {showFullDescription ? ' Show Less' : ' Show More'}
                 </span>
+              )}
+            </>
+            )}
             </p>
         </div>
 
         <div className='mt-8 text-lg font-semibold'>Essential Information</div>
 
         <div>
-           <EssentialInformation information='Price' value='₦500,000' />
-           <EssentialInformation information='Type' value='Residential' />
-           <EssentialInformation information='Status' value='Active' />
+           <EssentialInformation information='Price' value={formatPrice(price)} />
+           <EssentialInformation information='Type' value={usage} />
+           <EssentialInformation information='Status' value={status} />
         </div>
 
         <div className='flex items-center gap-4'>
@@ -69,23 +82,63 @@ const PropertyDetails = (props: Props) => {
         <div>
             <Line />
             <div className='flex justify-between items-center'>
-                <h2>Monthly Payment</h2>
-                <ChevronDown />
+                <h2 className='font-medium'>Monthly Payment</h2>
+                    {showMonthlyPayment ? (
+                        <ChevronUp className="cursor-pointer" onClick={() => setShowMonthlyPayment(false)} />
+                            ) : (
+                        <ChevronDown className="cursor-pointer" onClick={() => setShowMonthlyPayment(true)} />
+                    )}
             </div>
+            {(showMonthlyPayment && monthlyPayment) && (
+                <>
+                    <div className='mt-2 flex items-center justify-between'>
+                    <p>Price</p>
+                    <p>{formatPrice(price)}</p>
+                    </div>
+
+                    <div className='mt-2 flex items-center justify-between'>
+                    <p>Monthly payment</p>
+                    <p>{formatPrice(monthlyPayment)}</p>
+                    </div>
+                </>
+            )}
             <Line />
 
             <Line />
             <div className='flex justify-between items-center'>
-                <h2>Community Information</h2>
-                <ChevronDown />
+                <h2 className='font-medium'>Community Information</h2>
+                {showCommunityInfo ? (
+                    <ChevronUp className="cursor-pointer" onClick={() => setShowCommunityInfo(false)} />
+                        ) : (
+                    <ChevronDown className="cursor-pointer" onClick={() => setShowCommunityInfo(true)} />
+                )}
             </div>
+            {(showCommunityInfo && communicationInfo) && (
+                <>
+                    <div className='mt-2 flex items-center justify-between'>
+                    <p>{communicationInfo}</p>
+                    </div>
+                </>
+            )}
             <Line />
 
             <Line />
             <div className='flex justify-between items-center'>
-                <h2>School Information</h2>
-                <ChevronDown />
+                <h2 className='font-medium'>School Information</h2>
+                {showSchoolInfo ? (
+                    <ChevronUp className="cursor-pointer" onClick={() => setShowSchoolInfo(false)} />
+                        ) : (
+                    <ChevronDown className="cursor-pointer" onClick={() => setShowSchoolInfo(true)} />
+                )}
             </div>
+            {(showSchoolInfo && nearbySchools) && (
+                <>
+                    <div className='mt-2 flex flex-col md:flex-row md:items-center justify-between'>
+                    <p>Nearby Schools in the Area</p>
+                    <p className='font-semibold'>{nearbySchools}</p>
+                    </div>
+                </>
+            )}
             <Line />
         </div>
     </>

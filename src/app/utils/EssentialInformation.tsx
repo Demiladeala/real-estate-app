@@ -3,7 +3,7 @@ import Line from './Line'
 
 type Props = {
     information:string;
-    value:string;
+    value:string | number;
     className?: string;
 }
 

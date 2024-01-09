@@ -13,9 +13,11 @@ import listingImage4 from "../../../public/listing-image3.jpg"
 import listingImage5 from "../../../public/listing-image4.jpg"
 import InsetBg from '../utils/InsetBg';
 
-type Props = {}
+type Props = {
+  images:string[];
+}
 
-const ListingImage = (props: Props) => {
+const ListingImage = ({ images }: Props) => {
   return (
     <Swiper 
     modules={[ Pagination, Navigation, Autoplay ]}
@@ -25,30 +27,15 @@ const ListingImage = (props: Props) => {
     navigation
     autoplay={{ delay:4000 }}
     className='w-full h-[15rem] md:h-[25rem] lg:basis-[70%]'>
-      <SwiperSlide>
-        <InsetBg opacity='opacity-20' />
-        <ListingDetailsImage src={listingImage1}/>
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <InsetBg opacity='opacity-20' />
-        <ListingDetailsImage src={listingImage2} />
-      </SwiperSlide>
-
-    <SwiperSlide>
-      <InsetBg opacity='opacity-20' />
-      <ListingDetailsImage src={listingImage3} />
-    </SwiperSlide>
-
-    <SwiperSlide>
-      <InsetBg opacity='opacity-20' />
-      <ListingDetailsImage src={listingImage4} />
-    </SwiperSlide>
-
-    <SwiperSlide>
-      <InsetBg opacity='opacity-20' />
-      <ListingDetailsImage src={listingImage5} />
-    </SwiperSlide>
+      
+    {
+      images.map((image, index) => (
+        <SwiperSlide key={index}>
+          <InsetBg opacity='opacity-20' />
+          <ListingDetailsImage src={image}/>
+        </SwiperSlide>
+      ))
+    }
 
 
   </Swiper>

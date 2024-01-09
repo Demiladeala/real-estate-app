@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from "next/image"
 
 type Props = {
-    src: StaticImageData
+    src: StaticImageData | string;
 }
 
 const ListingDetailsImage = ({ src }: Props) => {
@@ -10,7 +10,9 @@ const ListingDetailsImage = ({ src }: Props) => {
         <Image
         alt='listing'
         src={src} 
-        className='w-full h-full bg-center bg-cover bg-no-repeat lg:rounded-xl'
+        className='w-full h-full bg-center bg-cover object-cover bg-no-repeat lg:rounded-xl'
+        width={500}
+        height={500}
         />
     </div>
   )

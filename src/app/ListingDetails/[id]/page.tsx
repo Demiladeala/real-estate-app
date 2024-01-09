@@ -17,10 +17,13 @@ type Props = {
   bedrooms: number;
   bathrooms: number;
   sqft: number;
+  acre: number;
   features: string[];
   propertyType: string;
   type: string;
   status: string;
+  availability: string;
+  propertyUsage: string;
   monthlyPayment?: number | null;
   nearbySchools: string[];
   communicationInfo: string;
@@ -74,7 +77,7 @@ export default async function ListingDetails ({params}: { params: { id: number }
             </div>
 
             <div className='lg:flex lg:items-start lg:gap-10'>
-              <ListingImage/>
+              <ListingImage images={property.images}/>
 
               <div className='w-full hidden lg:block border border-gray-200 py-3 px-3 rounded-xl lg:basis-[30%]'>
                 <ContactAgent />
@@ -84,11 +87,22 @@ export default async function ListingDetails ({params}: { params: { id: number }
 
             <div className='w-[90%] mx-auto mt-8 lg:w-full h-full flex flex-col lg:flex-row lg:items-start gap-10'>
               <div className='lg:basis-[70%]'>
-                <PropertyDetails />
+                <PropertyDetails 
+                beds={property.bedrooms} 
+                baths={property.bathrooms} 
+                sqft={property.sqft} 
+                acre={property.acre} 
+                desc={property.description}
+                price={property.price}
+                usage={property.propertyUsage}
+                status={property.availability}
+                monthlyPayment={property.monthlyPayment}
+                communicationInfo={property.communicationInfo}
+                nearbySchools={property.nearbySchools}/>
               </div>
 
-              <div className='lg:basis-[30%]'>
-                <SimilarProperties />
+              <div className='lg:basis-[30%] max-h-[40rem] overflow-y-scroll similarProperties'>
+                <SimilarProperties price={property.price} />
               </div>
             </div>
 
