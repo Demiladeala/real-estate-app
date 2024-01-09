@@ -109,7 +109,7 @@ export default async function ListingDetails ({params}: { params: { id: number }
             <div className='w-[90%] mx-auto lg:w-full mt-10'>
             <h2 className='font-semibold text-lg'>Similar homes</h2>
 
-              <SimilarHomes />
+              <SimilarHomes price={property.price}/>
             </div>
 
         </div>
