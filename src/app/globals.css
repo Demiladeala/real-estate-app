@@ -20,7 +20,7 @@ body::-webkit-scrollbar-thumb{
 }
 .footer-bg{
   width: 100%;
-  background-image: linear-gradient(#efefefef, #efefefef), url("../../public/footer-bg.png");
+  background-image: linear-gradient(#efefefe1, #efefefe1), url("../../public/footer-bg.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
