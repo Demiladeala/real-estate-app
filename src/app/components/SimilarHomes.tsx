@@ -41,10 +41,12 @@ const LoadingSkeleton = () => (
 );
 
 type Property = {
+  id: number;
   price: number;
+  propertyType: string;
 }
 
-const SimilarHomes = ({ price }: Property) => {
+const SimilarHomes = ({ id, price, propertyType }: Property) => {
   const percentageRange = 20;
   const {data, isPending, isError, error } = useQuery({
     queryKey: ["userProperties"],
@@ -53,11 +55,22 @@ const SimilarHomes = ({ price }: Property) => {
       return data
     },
   })
-  const filteredProperties = (data || []).filter(
+  let filteredProperties = (data || []).filter(
     (property: Props) =>
+      property.id !== id &&
+      property.propertyType === propertyType &&
       property.price >= price * (1 - percentageRange / 100) &&
       property.price <= price * (1 + percentageRange / 100)
   );
+
+  if (filteredProperties.length === 0) {
+    filteredProperties = (data || []).filter(
+      (property: Props) =>
+        property.id !== id &&
+        property.price >= price * (1 - percentageRange / 100) &&
+        property.price <= price * (1 + percentageRange / 100)
+    );
+  }
 
   return (
     <div className="relative my-3">

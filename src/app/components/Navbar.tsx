@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image"
-import logo from '../../../public/logo.png'
+import logo from '../../../public/logo-2.png'
 import { RiMenu4Fill } from "react-icons/ri";
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -12,6 +12,13 @@ const Navbar = (props: Props) => {
     const [nav, setNav ] = useState(false);
     const [hasShadow, setHasShadow] = useState(false);
     const { openModal } = useModalStore((state) => state)
+    const toggleNav = () => {
+      setNav(!nav);
+    }
+    const openMobileModal = (modalNumber:number) => {
+      openModal(modalNumber);
+      setNav(false);
+    }
 
     useEffect(() => {
         const handleScroll = () => {
@@ -25,11 +32,6 @@ const Navbar = (props: Props) => {
           window.removeEventListener("scroll", handleScroll);
         };
       }, []);
-
-
-    const toggleNav = () => {
-        setNav(!nav);
-    }
 
   return (
     <>
@@ -76,9 +78,9 @@ const Navbar = (props: Props) => {
             <div className="w-full h-px bg-[#eee]"></div>
             <Link href='/LandListings'><li>LAND</li></Link>
             <div className="w-full h-px bg-[#eee]"></div>
-            <li onClick={()=> openModal(1)} >LOGIN</li>
+            <li onClick={()=> openMobileModal(1)} >LOGIN</li>
             <div className="w-full h-px bg-[#eee]"></div>
-            <li onClick={()=> openModal(2)} >SIGNUP</li>
+            <li onClick={()=> openMobileModal(2)} >SIGNUP</li>
         </div>
     )}
 </>
