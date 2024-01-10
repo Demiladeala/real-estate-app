@@ -72,7 +72,7 @@ const Navbar = (props: Props) => {
     </div>
 
     { nav && 
-    (   <div className="w-full fixed bg-white shadow-xl px-5 py-3 pt-20 space-y-2 top-0 left-0 md:hidden z-10 list-none">
+    (   <div className="z-[12] w-full fixed bg-white shadow-xl px-5 py-3 pt-20 space-y-2 top-0 left-0 md:hidden list-none">
             <Link href='/BuyListings'><li>BUY</li></Link>
             <div className="w-full h-px bg-[#eee]"></div>
             <Link href='/RentListings'><li>RENT</li></Link>
