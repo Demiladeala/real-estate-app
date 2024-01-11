@@ -1,5 +1,7 @@
+"use client"
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
 import React, { useCallback, useState } from 'react'
 import { FiSearch } from 'react-icons/fi'
 
@@ -10,6 +12,7 @@ type PropertyType = {
 }
 
 const HomeFilter = () => {
+  const router = useRouter();
   const { data } = useQuery({
       queryKey: ["userProperties"],
       queryFn: async () => {
@@ -20,15 +23,18 @@ const HomeFilter = () => {
   const [searchInput, setSearchInput] = useState("");
   const [searchdropdown, setSearchDropdown] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [isAddressSelected, setIsAddressSelected] = useState(false);
   const uniqueCategories:string[] = Array.from(new Set(data?.map((category: PropertyType) => category.propertyType)));
 
   const filteredAddresses = data?.filter((property:PropertyType) => property.address?.toLowerCase().includes(searchInput.toLowerCase())
   ) || [];
+  const isSearchDisabled = !selectedCategory || !searchInput || !isAddressSelected;
 
   const handleAddressClick = useCallback(
     (address: string) => {
       setSearchInput(address);
       setSearchDropdown(false);
+      setIsAddressSelected(true);
     },
     [setSearchInput, setSearchDropdown]
   );
@@ -46,7 +52,12 @@ const HomeFilter = () => {
     },
     [setSearchInput, setSearchDropdown]
   );
-  
+
+  const searchNavigation = () => {
+    router.refresh();
+    router.push('/Search');
+  }
+
   return (
     <div className="w-[90%] z-10 absolute max-[350px]:left-[1rem] max-[400px]:left-[1.2rem] left-[1.5rem] md:left-[2rem] lg:left-[6rem] bottom-[3.5rem] max-[400px]:bottom-[2.5rem] md:bottom-[10rem] mt-4 md:mt-8 md:w-[80%] py-5 px-2 rounded bg-white/70 flex flex-col md:flex-row-reverse gap-5">
 
@@ -59,7 +70,12 @@ const HomeFilter = () => {
           value={searchInput} />
 
           <div className="w-[10%] bg-white py-2 rounded-tr rounded-br">
-            <button className="absolute right-[2px] top-[8px] bg-[#222] text-white w-7 h-7 flex items-center justify-center rounded-full">
+            <button 
+            onClick={searchNavigation}
+            disabled={isSearchDisabled}
+            className={`absolute right-[2px] top-[8px] bg-[#222] text-white w-7 h-7 flex items-center justify-center rounded-full ${
+              isSearchDisabled ? 'cursor-not-allowed opacity-50' : ''
+            }`}>
                 <FiSearch />
             </button>
           </div>

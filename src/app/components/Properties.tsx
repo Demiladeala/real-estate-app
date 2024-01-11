@@ -59,12 +59,12 @@ const Properties = () => {
       <div className='my-8 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-4'>
         {/* LISTINGS */}
         {
-          (isPending && isError) ? 
+          (isPending && isError && error) ? 
           <>
           {Array.from({ length: 8 }, (_, index) => (
               <LoadingSkeleton key={index} />
             ))}
-          </> : 
+          </> :
           <>
           {(data && data.length > 0) && 
           data
