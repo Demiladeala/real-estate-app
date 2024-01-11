@@ -56,7 +56,7 @@ const Navbar = (props: Props) => {
         <div className="hidden md:flex items-center gap-4">
             <button
             onClick={()=> openModal(1)} 
-            className="bg-[#222] text-white py-[6px] px-4 rounded-lg border hover:border-[#222] hover:bg-transparent hover:text-[#222]">
+            className="bg-[#222] text-white py-[6px] px-4 rounded-lg border hover:opacity-90">
               LOGIN
             </button>
             <button 

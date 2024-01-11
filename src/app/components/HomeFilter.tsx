@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import React, { useCallback, useState } from 'react'
 import { FiSearch } from 'react-icons/fi'
+import { useFilter } from '../context/SearchContext';
 
 type PropertyType = {
     id: number;
@@ -11,7 +12,12 @@ type PropertyType = {
     address?:string;
 }
 
-const HomeFilter = () => {
+type Props = {
+  classname?: string;
+}
+
+
+const HomeFilter = ({ classname } : Props) => {
   const router = useRouter();
   const { data } = useQuery({
       queryKey: ["userProperties"],
@@ -20,50 +26,56 @@ const HomeFilter = () => {
         return data
       },
     })
-  const [searchInput, setSearchInput] = useState("");
-  const [searchdropdown, setSearchDropdown] = useState(true);
-  const [selectedCategory, setSelectedCategory] = useState("");
+  const { searchInput, selectedCategory, updateSearchInput, 
+    updateSelectedCategory, updateDropdown, searchDropdown, searchNavigation} = useFilter();
   const [isAddressSelected, setIsAddressSelected] = useState(false);
   const uniqueCategories:string[] = Array.from(new Set(data?.map((category: PropertyType) => category.propertyType)));
 
-  const filteredAddresses = data?.filter((property:PropertyType) => property.address?.toLowerCase().includes(searchInput.toLowerCase())
-  ) || [];
+  const filteredAddressesSet = new Set<string>();
+
+  const filteredAddresses = data?.filter((property: PropertyType) => {
+  const address = property.address?.toLowerCase();
+  const includesSearchInput = address?.includes(searchInput.toLowerCase());
+
+  if (includesSearchInput && !filteredAddressesSet.has(address!)) {
+    filteredAddressesSet.add(address!);
+    return true;
+  }
+
+  return false;
+}) || [];
+
   const isSearchDisabled = !selectedCategory || !searchInput || !isAddressSelected;
 
   const handleAddressClick = useCallback(
     (address: string) => {
-      setSearchInput(address);
-      setSearchDropdown(false);
+      updateSearchInput(address);
+      updateDropdown(false);
       setIsAddressSelected(true);
     },
-    [setSearchInput, setSearchDropdown]
+    [updateSearchInput, updateDropdown]
   );
   const handleCategoryChange = useCallback(
     (e: React.ChangeEvent<HTMLSelectElement>) => {
       const category = e.target.value;
-      setSelectedCategory(category);
+      updateSelectedCategory(category);
     },
-    [setSelectedCategory]
+    [updateSelectedCategory]
   );
   const handleInputChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
-      setSearchInput(e.target.value);
-      setSearchDropdown(true);
+      updateSearchInput(e.target.value);
+      updateDropdown(true);
     },
-    [setSearchInput, setSearchDropdown]
+    [updateSearchInput, updateDropdown]
   );
 
-  const searchNavigation = () => {
-    router.refresh();
-    router.push('/Search');
-  }
-
   return (
-    <div className="w-[90%] z-10 absolute max-[350px]:left-[1rem] max-[400px]:left-[1.2rem] left-[1.5rem] md:left-[2rem] lg:left-[6rem] bottom-[3.5rem] max-[400px]:bottom-[2.5rem] md:bottom-[10rem] mt-4 md:mt-8 md:w-[80%] py-5 px-2 rounded bg-white/70 flex flex-col md:flex-row-reverse gap-5">
+    <div className={`${classname} w-[90%] z-10 absolute max-[350px]:left-[1rem] max-[400px]:left-[1.2rem] left-[1.5rem] md:left-[2rem] lg:left-[6rem] bottom-[3.5rem] max-[400px]:bottom-[2.5rem] md:bottom-[10rem] mt-4 md:mt-8 md:w-[80%] py-5 px-2 rounded bg-white/70 flex flex-col md:flex-row-reverse gap-5`}>
 
       <div className="relative w-full basis-[100%] md:basis-[50%] flex">
           <input
-          className="relative w-[90%] outline-none text-sm md:text-base py-3 px-3 rounded-bl rounded-tl"
+          className={`relative w-[90%] outline-none text-sm md:text-base py-3 px-3 rounded-bl rounded-tl placeholder:text-gray-700`}
           type="search" 
           placeholder="Search for Address in available locations"
           onChange={handleInputChange}
@@ -80,7 +92,7 @@ const HomeFilter = () => {
             </button>
           </div>
 
-          {(searchdropdown && searchInput!=="") && (
+          {(searchDropdown && searchInput!=="") && (
             <div className={`absolute z-[11] top-[2.5rem] w-[90%] ${filteredAddresses.length > 1 ? "h-[6rem] md:h-[8rem]" : "h-full"} mt-1 bg-[#fefefedc] rounded-b shadow-md overflow-y-scroll`}>
               {filteredAddresses.length > 0 ? (
                 <ul>
