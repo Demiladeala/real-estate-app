@@ -38,12 +38,12 @@ const Navbar = (props: Props) => {
     <div className={`z-50 fixed top-0 left-0 p-4 w-full flex justify-between items-center ${
           (hasShadow && !nav) ? "bg-white shadow-xl" : "bg-white border-b border-gray-200"
         }`}>
-        <div className="">
+        <div className="w-[12rem]">
             <Link href='/'>
                 <Image
                 alt="logo" 
                 src={logo}
-                className="h-full bg-center object-contain"/>
+                className="h-full bg-center bg-cover object-cover"/>
             </Link>
         </div>
 
