@@ -70,7 +70,7 @@ const Search = () => {
 
   return (
     <div className='relative mt-20'>
-         <HomeFilter classname="relative top-0 bg-[#dedede]"/>
+         <HomeFilter classname="relative top-0 bg-[#d4d4d4]"/>
 
         <div className='w-[95%] lg:w-[98%] mx-auto mt-8'>
             <h2 className='font-semibold text-xl lg:text-2xl'>Search <span className='font-normal'>For Property</span>:</h2>
