@@ -14,11 +14,10 @@ type PropertyType = {
 
 type Props = {
   classname?: string;
-  display?: string;
 }
 
 
-const HomeFilter = ({ classname, display } : Props) => {
+const HomeFilter = ({ classname } : Props) => {
   const router = useRouter();
   const { data } = useQuery({
       queryKey: ["userProperties"],
@@ -86,7 +85,7 @@ const HomeFilter = ({ classname, display } : Props) => {
             <button 
             onClick={searchNavigation}
             disabled={isSearchDisabled}
-            className={`${display} absolute right-[2px] top-[8px] bg-[#222] text-white w-7 h-7 flex items-center justify-center rounded-full 
+            className={` absolute right-[2px] top-[8px] bg-[#222] text-white w-7 h-7 flex items-center justify-center rounded-full 
             ${isSearchDisabled ? 'cursor-not-allowed opacity-50' : ''
             }`}>
                 <FiSearch />
