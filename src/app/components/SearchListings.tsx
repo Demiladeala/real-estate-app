@@ -23,7 +23,14 @@ const SearchListings = (props: Props) => {
             <div className=''>
                 <select 
                 className='outline-none border border-[#222] py-2 px-5 rounded-lg'>
-                    <option value="">Price</option>
+                    <option value="">Min Price</option> 
+                </select>
+            </div>
+
+            <div className=''>
+                <select 
+                className='outline-none border border-[#222] py-2 px-5 rounded-lg'>
+                    <option value="">Max Price</option> 
                 </select>
             </div>
             
