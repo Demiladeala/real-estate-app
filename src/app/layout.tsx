@@ -3,6 +3,7 @@ import { Montserrat } from 'next/font/google'
 import './globals.css'
 import TanstackProvider from './utils/TanstackProvider'
 import { FilterProvider } from './context/SearchContext'
+import ModalLayout from './Layout/ModalLayout'
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 
@@ -21,9 +22,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={montserrat.className}>
         <TanstackProvider>
-          <FilterProvider>
-            {children}
-          </FilterProvider>
+          <ModalLayout>
+            <FilterProvider>
+              {children}
+            </FilterProvider>
+          </ModalLayout>
         </TanstackProvider>
       </body>
     </html>
