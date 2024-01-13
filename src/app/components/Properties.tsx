@@ -76,7 +76,7 @@ const Properties = () => {
       </div>
 
       <div className='my-8 w-full flex justify-center items-center'>
-        <Link href="/BuyListings"><button className='px-5 py-3 bg-[#222] text-white rounded-lg hover:opacity-90'>Browse More Properties</button></Link>
+        <Link href="/BuyListings"><button className='px-5 py-3 bg-[#222] text-white font-semibold rounded-lg hover:opacity-90'>Browse More Properties</button></Link>
       </div>
 
     </div>
