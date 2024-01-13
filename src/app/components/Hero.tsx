@@ -58,7 +58,7 @@ const Hero = () => {
       </SwiperSlide>
       ))}
     </Swiper>
-    <HomeFilter />
+    <HomeFilter changeBg={false} />
     </div>
   )
 }
