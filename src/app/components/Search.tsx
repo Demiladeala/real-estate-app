@@ -121,7 +121,7 @@ const Search = () => {
                   <div className='mt-2 flex justify-between items-center gap-2'>
                     <p className='text-sm'>{property.address}</p>
                     <div>
-                        <button className='px-3 py-1 border border-[#222] rounded-3xl font-semibold text-sm'>Commit</button>
+                        <button className='px-3 py-1 border border-[#222] rounded-3xl font-semibold text-sm'>Inquire</button>
                     </div>
                   </div>
                 </div>
