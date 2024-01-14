@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import image1 from '../../../public/property-image-1.jpg'
 import Link from 'next/link'
+import { useModalStore } from '../Store/ModalStore';
 
 
 type Props = {
@@ -31,10 +31,11 @@ const formatPrice = (price: number) => {
   };
 
 const PropertiesCard = (props: Props) => {
+  const { openModal } = useModalStore((state) => state)
   return (
     <div className='border rounded-xl shadow-md hover:shadow-2xl cursor-pointer'>
     <div className='w-full h-[13rem] rounded-xl'>
-      <Link href={`/ListingDetails/${props.id}`}>
+      <Link target="_blank" href={`/ListingDetails/${props.id}`}>
           <Image 
           className='w-full h-full bg-center bg-no-repeat object-cover rounded-tl-xl rounded-tr-xl'
           alt="property"
@@ -70,7 +71,10 @@ const PropertiesCard = (props: Props) => {
       <div className='mt-2 flex justify-between items-center gap-2'>
         <p className='text-sm'>{props.address}</p>
         <div>
-            <button className='px-3 py-1 border border-[#222] rounded-3xl font-semibold text-sm'>Inquire</button>
+            <button
+            onClick={() => openModal(3)} 
+            className='px-4 py-2 border border-[#222] rounded-3xl font-semibold text-sm'
+            >Inquire</button>
         </div>
       </div>
     </div>

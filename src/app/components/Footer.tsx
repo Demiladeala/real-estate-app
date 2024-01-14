@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import logo from '../../../public/logo-footer.png'
+import logo from '../../../public/logo-2.png'
 
 type Props = {}
 
@@ -15,6 +15,7 @@ const Footer = (props: Props) => {
             <Image 
             alt='footer-logo'
             src={logo}
+            className='w-[12rem] bg-no-repeat bg-center bg-cover object-cover'
             />
             <div className='mt-2'>
               <p>A Fullstack website designed specifically for real estate and property showcase websites</p>

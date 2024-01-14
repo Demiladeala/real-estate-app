@@ -42,11 +42,7 @@ const LandListings = () => {
   if (isError) {
     return <span>Error: {error.message}</span>
   }
-
-  const formatPrice = (price: number) => {
-    return `₦${price.toLocaleString()}`;
-  };
-
+  
   return (
     <div className='relative mt-20'>
         <SearchListings />

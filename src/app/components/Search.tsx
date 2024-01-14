@@ -4,8 +4,6 @@ import { useFilter } from "../context/SearchContext";
 import axios from "axios";
 import { useEffect } from "react";
 import HomeFilter from "./HomeFilter";
-import Link from "next/link";
-import Image from "next/image";
 import Experts from "./Experts";
 import ClientsMarquee from "./ClientsMarquee";
 import LoadingSkeleton from "../utils/LoadingSkeleton";
@@ -42,9 +40,6 @@ const Search = () => {
         return data
       },
     })
-    const formatPrice = (price: number) => {
-      return `₦${price.toLocaleString()}`;
-    };   
     
     const filteredProperties = data?.filter((property: Props) => {
       const isCategoryMatch = !selectedCategory || property.propertyType === selectedCategory;
@@ -53,6 +48,7 @@ const Search = () => {
   
       return searchButtonPressed && isCategoryMatch && isAddressMatch;
     });
+
     useEffect(() => {
       updateDropdown(false);
     }, []);
@@ -75,7 +71,7 @@ const Search = () => {
             {Array.from({ length: 12 }, (_, index) => (
                 <LoadingSkeleton key={index} />
               ))}
-            </> ): 
+            </> ) : 
             filteredProperties.length === 0 ? (
             <div className="w-full absolute  text-center text-gray-600 my-8">
               No properties match the selected criteria.

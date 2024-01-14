@@ -56,7 +56,7 @@ const Properties = () => {
       <div className='my-8 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-4'>
         {/* LISTINGS */}
         {
-          (isPending && isError && error) ? 
+          (isPending) ? 
           <>
           {Array.from({ length: 8 }, (_, index) => (
               <LoadingSkeleton key={index} />
@@ -71,12 +71,12 @@ const Properties = () => {
           ))}
           </>
         }
-
       {/* END LISTINGS */}
       </div>
+      {isError && <><p className="block w-full py-3 text-center font-semibold">Seems Something went wrong! No properties found</p></>}
 
       <div className='my-8 w-full flex justify-center items-center'>
-        <Link href="/BuyListings"><button className='px-5 py-3 bg-[#222] text-white font-semibold rounded-lg hover:opacity-90'>Browse More Properties</button></Link>
+        <Link href="/BuyListings"><button className='px-5 py-3 bg-[#222] text-white font-semibold rounded-xl hover:opacity-90'>Browse More Properties</button></Link>
       </div>
 
     </div>
