@@ -23,6 +23,7 @@ type Props = {
     createdAt: string;
     updatedAt: string;
     acre?: number;
+    similar?:boolean;
 }
   
 
@@ -32,10 +33,11 @@ const formatPrice = (price: number) => {
 
 const PropertiesCard = (props: Props) => {
   const { openModal } = useModalStore((state) => state)
+  const linkProps = props.similar ? { target: '_blank', rel: 'noopener noreferrer' } : {};
   return (
-    <div className='border rounded-xl shadow-md hover:shadow-2xl cursor-pointer'>
+    <div className={`${props.similar && "flex-shrink-0 min-h-[12rem] w-[20rem] overflow-x-scroll"}border rounded-xl shadow-md hover:shadow-2xl cursor-pointer`}>
     <div className='w-full h-[13rem] rounded-xl'>
-      <Link target="_blank" href={`/ListingDetails/${props.id}`}>
+        <Link href={`/ListingDetails/${props.id}`} {...linkProps}>
           <Image 
           className='w-full h-full bg-center bg-no-repeat object-cover rounded-tl-xl rounded-tr-xl'
           alt="property"

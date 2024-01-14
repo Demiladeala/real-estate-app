@@ -84,7 +84,7 @@ const SimilarHomes = ({ id, price, propertyType }: Property) => {
            <>
            {filteredProperties.length > 0 ? (
              filteredProperties.map((property: Props) => (
-              <PropertiesCard key={property.id} {...property} />
+              <PropertiesCard similar={true} key={property.id} {...property} />
              ))
            ) : (
              <p>No properties found around the specified price range.</p>
