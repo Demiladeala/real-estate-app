@@ -271,7 +271,7 @@ const AddProperty = (props: Props) => {
                       onClick={() => submitProperty()}
                       type='submit' className='py-[5px] px-5 rounded-lg bg-gray-700 text-gray-200 hover:bg-gray-800'>
                         {isPending ?
-                        (<Loader />) :
+                        (<Loader width='20'/>) :
                         <> Submit </> 
                         }
                       </button>

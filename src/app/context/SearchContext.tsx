@@ -7,6 +7,8 @@ type FilterContextType = {
   selectedCategory: string;
   searchDropdown: boolean;
   searchButtonPressed: boolean;
+  propertyName: string;
+  selectPropertyName: (value: string) => void;
   updateSearchInput: (value: string) => void;
   updateSelectedCategory: (value: string) => void;
   updateDropdown: (value: boolean) => void;
@@ -26,6 +28,7 @@ export const FilterProvider: React.FC<FilterProviderProps> = ({ children }) => {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [searchDropdown, setSearchDropdown] = useState(true);
   const [searchButtonPressed, setSearchButtonPressed] = useState(false);
+  const [propertyName, setPropertyName] = useState(""); 
 
   const updateSearchInput = (value: string) => {
     setSearchInput(value);
@@ -45,16 +48,22 @@ export const FilterProvider: React.FC<FilterProviderProps> = ({ children }) => {
     setSearchButtonPressed(true);
   }
 
+  const selectPropertyName = (value:string) => {
+    setPropertyName(value);
+  }
+
   const contextValue: FilterContextType = {
     searchInput,
     selectedCategory,
     searchDropdown,
     updateSearchInput,
+    propertyName,
     updateSelectedCategory,
     updateDropdown,
     searchNavigation,
     searchButtonPressed,
     setSearchButtonPressed,
+    selectPropertyName
   };
 
   return <FilterContext.Provider value={contextValue}>{children}</FilterContext.Provider>;

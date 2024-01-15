@@ -14,7 +14,7 @@ const ContactAgent = (props: Props) => {
         <Input type='text' placeholder='How can an agent help?' className='text-sm pb-12' />
 
         <div className='mt-3 w-full flex items-center justify-center'>
-            <button className='bg-[#222] w-full text-white py-3 rounded-2xl hover:opacity-95'>Commit</button>
+            <button className='bg-[#222] w-full text-white py-3 rounded-2xl hover:opacity-95'>Inquire</button>
         </div>
     </div>
   )

@@ -1,3 +1,4 @@
+"use client"
 import Image from 'next/image'
 import Link from 'next/link'
 import { useModalStore } from '../Store/ModalStore';
@@ -32,7 +33,7 @@ const formatPrice = (price: number) => {
   };
 
 const PropertiesCard = (props: Props) => {
-  const { openModal } = useModalStore((state) => state)
+  const { openModal } = useModalStore((state) => state);
   const linkProps = props.similar ? { target: '_blank', rel: 'noopener noreferrer' } : {};
   return (
     <div className={`${props.similar && "flex-shrink-0 min-h-[12rem] w-[20rem] overflow-x-scroll"}border rounded-xl shadow-md hover:shadow-2xl cursor-pointer`}>
