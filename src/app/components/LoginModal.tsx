@@ -21,7 +21,7 @@ const LoginModal = (props: Props) => {
               <Image src={google} alt="google" width={30} height={30}/>
               <h4>Continue with google</h4>
             </button>
-            <p className='mt-2 text-sm w-full text-center'>Don't have an account ? <span onClick={openSignUpModal} className='underline cursor-pointer'>Sign Up</span></p>
+            <p className='mt-2 text-sm w-full text-center'>Don&apos;t have an account ? <span onClick={openSignUpModal} className='underline cursor-pointer'>Sign Up</span></p>
         </div>
     </div>
   )
