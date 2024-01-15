@@ -81,7 +81,7 @@ const InquireForm = (props: Props) => {
             <button
             disabled={isdisabled} 
             className={`${isdisabled ? "bg-opacity-80 cursor-not-allowed" : ""} bg-[#222] w-full text-white py-3 rounded-2xl hover:opacity-95 flex items-center justify-center`}>
-              {loading ? "Loading..." : "Send Message"}
+              {loading ? "Sending..." : "Send Message"}
             </button>
           </div>
     </form>
