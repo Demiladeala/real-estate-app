@@ -26,7 +26,7 @@ const Services = (props: Props) => {
                 </Fade>
                 <div className="w-px h-32 bg-gray-200 max-md:hidden"></div>
 
-                <Fade direction='up' triggerOnce delay={200}>
+                <Fade direction='up' triggerOnce delay={250}>
                 <div className='mt-8'>
                     <div className='max-md:w-[70%] mx-auto'>
                         <div className='flex items-center justify-center md:items-start md:justify-start'>
@@ -39,7 +39,7 @@ const Services = (props: Props) => {
                 </Fade>
                 <div className="w-px h-32 bg-gray-200 max-md:hidden"></div>
                 
-                <Fade direction='up' triggerOnce delay={300}>
+                <Fade direction='up' triggerOnce delay={400}>
                 <div className='mt-8'>
                     <div className='max-md:w-[70%] mx-auto'>
                         <div className='flex items-center justify-center md:items-start md:justify-start'>
@@ -52,7 +52,7 @@ const Services = (props: Props) => {
                 </Fade>
                 <div className="w-px h-32 bg-gray-200 max-md:hidden"></div>
 
-                <Fade direction='up' triggerOnce delay={400}>
+                <Fade direction='up' triggerOnce delay={550}>
                 <div className='mt-8'>
                     <div className='max-md:w-[70%] mx-auto'>
                         <div className='flex items-center justify-center md:items-start md:justify-start'>
