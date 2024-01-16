@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"
 import dbClient from "@/app/utils/dbClient";
 
-export async function GET({params}: any) {
+export async function GET(req:any, {params}: any) {
     
     const {id} = params
     
