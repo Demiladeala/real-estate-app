@@ -1,4 +1,5 @@
 import React from 'react'
+import * as options from '../utils/options';
 
 type Props = {}
 
@@ -16,49 +17,77 @@ const SearchListings = (props: Props) => {
             <div className=''>
                 <select 
                 className='outline-none border border-[#222] py-2 px-5 rounded-lg'>
-                    <option value="">Category</option>
+                    {options.propertyCategories.map((option) => (
+                        <option key={option.value} value={option.value}>
+                        {option.label}
+                        </option>
+                    ))}
                 </select>
             </div>
 
             <div className=''>
                 <select 
                 className='outline-none border border-[#222] py-2 px-5 rounded-lg'>
-                    <option value="">Min Price</option> 
+                    {options.minPriceOptions.map((option) => (
+                        <option key={option.value} value={option.value}>
+                        {option.label}
+                        </option>
+                    ))}
                 </select>
             </div>
 
             <div className=''>
                 <select 
                 className='outline-none border border-[#222] py-2 px-5 rounded-lg'>
-                    <option value="">Max Price</option> 
+                    {options.maxPriceOptions.map((option) => (
+                        <option key={option.value} value={option.value}>
+                        {option.label}
+                        </option>
+                    ))}
                 </select>
             </div>
             
             <div className=''>
                 <select 
                 className='outline-none border border-[#222] py-2 px-5 rounded-lg'>
-                    <option value="">Bedroom</option>
+                    {options.bedroomOptions.map((option) => (
+                        <option key={option.value} value={option.value}>
+                        {option.label}
+                        </option>
+                    ))}
                 </select>
             </div>
 
             <div className=''>
                 <select 
                 className='outline-none border border-[#222] py-2 px-5 rounded-lg'>
-                    <option value="">Bathroom</option>
+                    {options.bathroomOptions.map((option) => (
+                        <option key={option.value} value={option.value}>
+                        {option.label}
+                        </option>
+                    ))}
                 </select>
             </div>
 
             <div className=''>
                 <select 
                 className='outline-none border border-[#222] py-2 px-5 rounded-lg'>
-                    <option value="">Features</option>
+                    {options.featuresOptions.map((option) => (
+                        <option key={option.value} value={option.value}>
+                        {option.label}
+                        </option>
+                    ))}
                 </select>
             </div>
 
             <div className=''>
                 <select 
                 className='outline-none border border-[#222] py-2 px-5 rounded-lg'>
-                    <option value="">Newest</option>
+                    {options.sortByOptions.map((option) => (
+                        <option key={option.value} value={option.value}>
+                        {option.label}
+                        </option>
+                    ))}
                 </select>
             </div>
 

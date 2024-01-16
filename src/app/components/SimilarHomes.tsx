@@ -35,7 +35,7 @@ type Property = {
 
 const SimilarHomes = ({ id, price, propertyType }: Property) => {
   const percentageRange = 20;
-  const {data, isPending, isError, error } = useQuery({
+  const {data, isPending, isError } = useQuery({
     queryKey: ["userProperties"],
     queryFn: async () => {
       const { data } = await axios.get("/api/properties")
@@ -61,7 +61,7 @@ const SimilarHomes = ({ id, price, propertyType }: Property) => {
 
   return (
     <div className="relative my-3">
-        <div
+        {/* <div
           className="z-10 absolute top-[40%] left-[-1rem] bg-white border border-[#222] rounded-full w-12 h-12 shadow-xl flex justify-center items-center cursor-pointer"
         >
           <ChevronLeft />
@@ -71,7 +71,7 @@ const SimilarHomes = ({ id, price, propertyType }: Property) => {
           className="z-10 absolute top-[40%] right-[-1.3rem] bg-white border border-[#222] rounded-full w-12 h-12 shadow-xl flex justify-center items-center cursor-pointer"
         >
           <ChevronRight />
-        </div>
+        </div> */}
 
         <div className="relative mt-8 flex items-center gap-5 overflow-x-scroll scroll-none">
         {
