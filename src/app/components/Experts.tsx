@@ -4,12 +4,14 @@ import expert1 from '../../../public/expert-1.jpg'
 import expert2 from '../../../public/expert-2.jpg'
 import expert3 from '../../../public/expert-3.jpg'
 import { PaintBucket, UserRoundCog, Lightbulb } from 'lucide-react'
+import { Fade } from 'react-awesome-reveal'
 
 type Props = {}
 
 const Experts = (props: Props) => {
   return (
     <>
+    <Fade>
     <div className='mt-20 md:mt-28 w-[90%] md:w-[95%] mx-auto'>
         <h2 className='text-xl md:text-3xl text-[#222]'>Our expert will help you <br /> make <strong> the renovation</strong></h2>
         
@@ -73,6 +75,7 @@ const Experts = (props: Props) => {
 
         </div>
     </div>
+    </Fade>
     </>
   )
 }

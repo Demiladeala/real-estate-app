@@ -12,6 +12,7 @@ import 'swiper/css/autoplay';
 import { FiSearch } from "react-icons/fi";
 import InsetBg from "../utils/InsetBg"
 import HomeFilter from "./HomeFilter"
+import { Fade } from "react-awesome-reveal"
 
 const images = [
   { src: hero, title: "Buy or Rent Properties with no commission"},
@@ -50,9 +51,11 @@ const Hero = () => {
             className="rounded-xl w-full h-full bg-cover object-cover bg-center"
             />
             <div className="z-40 w-full absolute top-[2rem] md:top-[4rem] left-0 px-4 lg:ml-16 overflow-hidden">
+              <Fade direction="up" triggerOnce>
               <h2 className="text-white text-2xl md:text-3xl lg:text-5xl font-semibold md:mt-28 ">
                 {truncateTitle(image.title)}
               </h2>
+              </Fade>
             </div>
         </div>
       </SwiperSlide>

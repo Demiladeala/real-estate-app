@@ -1,9 +1,8 @@
 import Link from "next/link"
-import Image from 'next/image'
-import image1 from '../../../public/property-image-1.jpg'
 import { useQuery } from "@tanstack/react-query"
 import axios from "axios"
 import PropertiesCard from "./PropertiesCard"
+import { Fade } from "react-awesome-reveal"
 
 
 type Props = {
@@ -50,8 +49,10 @@ const Properties = () => {
     <>
     <div className='mt-20 md:mt-24'></div>
     <div className='w-[95%] mx-auto'>
+      <Fade triggerOnce>
       <h2 className='text-2xl md:text-3xl text-[#222]'>Featured <strong>Properties</strong></h2>
       <p>Browse homes around ₦10,000,000 in Abuja, Nigeria</p>
+      </Fade>
 
       <div className='my-8 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-4'>
         {/* LISTINGS */}
@@ -66,8 +67,10 @@ const Properties = () => {
           {(data && data.length > 0) && 
           data
           .filter((property: Props) => property.type === 'property' && property.price <= 10000000)
-          .map((property:Props) => (
+          .map((property:Props, index:any) => (
+            <Fade key={property.id} direction="up" delay={index * 200} triggerOnce>
             <PropertiesCard key={property.id} {...property} />
+            </Fade>
           ))}
           </>
         }

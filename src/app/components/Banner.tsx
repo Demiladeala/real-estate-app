@@ -2,12 +2,14 @@ import React from 'react'
 import Image from 'next/image'
 import { CgArrowLongRight } from "react-icons/cg";
 import banner from '../../../public/banner-image.png'
+import { Fade } from 'react-awesome-reveal';
 
 
 type Props = {}
 
 const Banner = (props: Props) => {
   return (
+    <Fade>
     <div className='relative w-[95%] mx-auto my-20 px-4 py-4 md:py-20 md:mt-24 mb-8 bg-white box-shadow rounded-2xl overflow-x-hidden'>
         <div className='relative lg:top-[0rem] lg:absolute right-0'>
             <Image 
@@ -26,6 +28,7 @@ const Banner = (props: Props) => {
             </button>
         </div>
     </div>
+    </Fade>
   )
 }
 
