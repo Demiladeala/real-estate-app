@@ -4,6 +4,7 @@ import './globals.css'
 import TanstackProvider from './utils/TanstackProvider'
 import { FilterProvider } from './context/SearchContext'
 import ModalLayout from './Layout/ModalLayout'
+import Providers from './utils/Providers'
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 
@@ -21,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={montserrat.className}>
+      <Providers>
         <TanstackProvider>
           <ModalLayout>
             <FilterProvider>
@@ -28,6 +30,7 @@ export default function RootLayout({
             </FilterProvider>
           </ModalLayout>
         </TanstackProvider>
+        </Providers>
       </body>
     </html>
   )

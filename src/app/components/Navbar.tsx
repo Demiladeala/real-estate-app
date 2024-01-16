@@ -5,10 +5,12 @@ import { RiMenu4Fill } from "react-icons/ri";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useModalStore } from "../Store/ModalStore";
+import { signOut, useSession } from 'next-auth/react'
 
 type Props = {}
 
 const Navbar = (props: Props) => {
+    const { data: session } = useSession();
     const [nav, setNav ] = useState(false);
     const [hasShadow, setHasShadow] = useState(false);
     const { openModal } = useModalStore((state) => state)
@@ -53,6 +55,16 @@ const Navbar = (props: Props) => {
             <Link href='/LandListings'><h4 className="cursor-pointer">LAND</h4></Link>
         </div>
 
+        {session && session.user ?
+        <>
+        <div className='flex gap-4'>
+              <p className='text-blue-600'>{session.user.name}</p>
+              <button onClick={() =>signOut()}>
+                Sign Out
+              </button>
+          </div>
+        </>:
+        <>
         <div className="hidden md:flex items-center gap-4">
             <button
             onClick={()=> openModal(1)} 
@@ -65,6 +77,7 @@ const Navbar = (props: Props) => {
               SIGNUP
             </button>
         </div>
+        </>}
 
         <div className="md:hidden pr-3">
             <RiMenu4Fill onClick={toggleNav} className="cursor-pointer" size={25}/>
