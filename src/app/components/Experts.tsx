@@ -11,7 +11,7 @@ type Props = {}
 const Experts = (props: Props) => {
   return (
     <>
-    <Fade>
+    <Fade triggerOnce>
     <div className='mt-20 md:mt-28 w-[90%] md:w-[95%] mx-auto'>
         <h2 className='text-xl md:text-3xl text-[#222]'>Our expert will help you <br /> make <strong> the renovation</strong></h2>
         

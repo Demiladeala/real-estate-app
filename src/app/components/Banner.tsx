@@ -9,7 +9,7 @@ type Props = {}
 
 const Banner = (props: Props) => {
   return (
-    <Fade>
+    <Fade triggerOnce>
     <div className='relative w-[95%] mx-auto my-20 px-4 py-4 md:py-20 md:mt-24 mb-8 bg-white box-shadow rounded-2xl overflow-x-hidden'>
         <div className='relative lg:top-[0rem] lg:absolute right-0'>
             <Image 
