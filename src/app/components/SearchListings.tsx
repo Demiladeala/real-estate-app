@@ -22,6 +22,7 @@ const SearchListings = (props: Props) => {
                         {option.label}
                         </option>
                     ))}
+                    <option>Coming soon....</option>
                 </select>
             </div>
 
@@ -33,6 +34,7 @@ const SearchListings = (props: Props) => {
                         {option.label}
                         </option>
                     ))}
+                    <option>Coming soon....</option>
                 </select>
             </div>
 
@@ -44,6 +46,7 @@ const SearchListings = (props: Props) => {
                         {option.label}
                         </option>
                     ))}
+                    <option>Coming soon....</option>
                 </select>
             </div>
             
@@ -55,6 +58,7 @@ const SearchListings = (props: Props) => {
                         {option.label}
                         </option>
                     ))}
+                    <option>Coming soon....</option>
                 </select>
             </div>
 
@@ -66,6 +70,7 @@ const SearchListings = (props: Props) => {
                         {option.label}
                         </option>
                     ))}
+                    <option>Coming soon....</option>
                 </select>
             </div>
 
@@ -77,6 +82,7 @@ const SearchListings = (props: Props) => {
                         {option.label}
                         </option>
                     ))}
+                    <option>Coming soon....</option>
                 </select>
             </div>
 
@@ -88,6 +94,7 @@ const SearchListings = (props: Props) => {
                         {option.label}
                         </option>
                     ))}
+                    <option>Coming soon....</option>
                 </select>
             </div>
 
